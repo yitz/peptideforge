@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Shield, Brain, Activity } from "lucide-react";
+import { ArrowRight, Shield, Stethoscope, FlaskConical } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -12,18 +12,18 @@ export function HeroSection() {
         <div className="mx-auto max-w-3xl text-center">
           <Badge variant="secondary" className="mb-6 gap-1.5 px-3 py-1">
             <Shield className="h-3.5 w-3.5" />
-            Physician-Supervised &middot; HIPAA Compliant
+            Physician-Supervised &middot; 503A Pharmacy
           </Badge>
 
           <h1 className="font-[family-name:var(--font-space-grotesk)] text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Your Peptide Protocol,{" "}
-            <span className="text-primary">Forged by AI</span>
+            Premium Peptide Therapy,{" "}
+            <span className="text-primary">Personalized to You</span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-            The most intelligent peptide therapy platform on Earth.
-            AI-driven protocols personalized to your goals, labs, and biology
-            &mdash; backed by licensed providers and 503A compounding pharmacies.
+            The most trusted peptide therapy experience available.
+            Physician-supervised protocols matched to your wellness goals
+            &mdash; compounded at licensed 503A pharmacies and delivered to your door.
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -38,19 +38,19 @@ export function HeroSection() {
 
           <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-3">
             <MetricCard
-              icon={<Brain className="h-5 w-5 text-primary" />}
-              metric="6 AI Agents"
-              label="Personalization engine"
-            />
-            <MetricCard
-              icon={<Shield className="h-5 w-5 text-primary" />}
+              icon={<Stethoscope className="h-5 w-5 text-primary" />}
               metric="100%"
               label="Physician-supervised"
             />
             <MetricCard
-              icon={<Activity className="h-5 w-5 text-primary" />}
+              icon={<FlaskConical className="h-5 w-5 text-primary" />}
               metric="503A"
               label="Licensed pharmacies"
+            />
+            <MetricCard
+              icon={<Shield className="h-5 w-5 text-primary" />}
+              metric="HIPAA"
+              label="Compliant platform"
             />
           </div>
         </div>

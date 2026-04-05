@@ -10,11 +10,11 @@ export function CTASection() {
           <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_120%,var(--color-primary)/10,transparent)]" />
           <div className="px-6 py-16 text-center sm:px-12 sm:py-20">
             <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl font-bold tracking-tight sm:text-4xl">
-              Ready to Optimize Your Biology?
+              Ready to Start Your Peptide Journey?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-              Take our 2-minute quiz to discover which peptide protocol matches
-              your goals. No commitment required.
+              Take our 30-second quiz to explore which peptides match your
+              wellness goals. Then connect with a licensed provider.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Button size="lg" className="gap-2 text-base" render={<Link href="/quiz" />}>

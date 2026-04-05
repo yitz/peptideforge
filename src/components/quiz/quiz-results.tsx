@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, FlaskConical, Sparkles, Check } from "lucide-react";
+import { ArrowRight, FlaskConical, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,29 +9,15 @@ import { Separator } from "@/components/ui/separator";
 import type { QuizAnswers, QuizGoal } from "@/components/quiz/quiz-flow";
 import { getPeptidesByGoal, type CompoundablePeptide } from "@/lib/peptides/registry";
 
-function recommendPeptides(answers: QuizAnswers): CompoundablePeptide[] {
+function matchPeptides(answers: QuizAnswers): CompoundablePeptide[] {
   const seen = new Set<string>();
   const results: CompoundablePeptide[] = [];
 
-  const goalMap: Record<string, QuizGoal[]> = {
-    recovery: ["recovery"],
-    performance: ["performance"],
-    longevity: ["longevity", "anti-aging" as QuizGoal],
-    "body-comp": ["body-comp"],
-    sleep: ["sleep"],
-    immune: ["immune"],
-    "sexual-health": ["sexual-health"],
-    cognitive: ["cognitive"],
-  };
-
   for (const goal of answers.goals) {
-    const tags = goalMap[goal] ?? [goal];
-    for (const tag of tags) {
-      for (const peptide of getPeptidesByGoal(tag)) {
-        if (!seen.has(peptide.id)) {
-          seen.add(peptide.id);
-          results.push(peptide);
-        }
+    for (const peptide of getPeptidesByGoal(goal as QuizGoal)) {
+      if (!seen.has(peptide.id)) {
+        seen.add(peptide.id);
+        results.push(peptide);
       }
     }
   }
@@ -40,77 +26,68 @@ function recommendPeptides(answers: QuizAnswers): CompoundablePeptide[] {
 }
 
 export function QuizResults({ answers }: { answers: QuizAnswers }) {
-  const recommended = recommendPeptides(answers);
+  const matched = matchPeptides(answers);
 
   return (
     <div>
       <div className="mb-8 text-center">
-        <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-          <Sparkles className="h-7 w-7 text-primary" />
-        </div>
         <h2 className="font-[family-name:var(--font-space-grotesk)] text-2xl font-bold sm:text-3xl">
-          Your Personalized Protocol Preview
+          Peptides That Match Your Goals
         </h2>
         <p className="mt-2 text-muted-foreground">
-          Based on your goals:{" "}
-          {answers.goals.map((g) => g.replace("-", " ")).join(", ")}
+          Based on: {answers.goals.map((g) => g.replace("-", " ")).join(", ")}
         </p>
       </div>
 
-      <Card className="mb-6 border-primary/30">
-        <CardContent className="p-6">
-          <div className="flex items-start gap-3">
-            <Check className="mt-0.5 h-5 w-5 text-primary" />
-            <div>
-              <p className="text-sm font-medium">
-                AI-matched {recommended.length} peptides to your profile
-              </p>
-              <p className="mt-1 text-xs text-muted-foreground">
-                This is a preview. Your final protocol will be customized by our
-                AI engine and reviewed by a licensed physician based on your
-                complete medical history and lab work.
-              </p>
-            </div>
+      <Card className="mb-6 border-primary/30 bg-primary/5">
+        <CardContent className="flex items-start gap-3 p-5">
+          <Stethoscope className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+          <div>
+            <p className="text-sm font-medium">
+              This is an educational match — not a medical recommendation
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              A licensed physician will evaluate your health history, order any
+              necessary labs, and determine the right protocol for you. All
+              prescribing decisions are made by your provider.
+            </p>
           </div>
         </CardContent>
       </Card>
 
       <div className="space-y-4">
-        {recommended.map((peptide) => (
-          <Card key={peptide.id}>
-            <CardHeader className="pb-2">
-              <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
-                  <FlaskConical className="h-4 w-4 text-primary" />
+        {matched.map((peptide) => (
+          <Link key={peptide.id} href={`/peptides/${peptide.slug}`} className="block">
+            <Card className="transition-colors hover:border-primary/50">
+              <CardHeader className="pb-2">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
+                    <FlaskConical className="h-4 w-4 text-primary" />
+                  </div>
+                  <div>
+                    <CardTitle className="font-[family-name:var(--font-space-grotesk)] text-base">
+                      {peptide.name}
+                    </CardTitle>
+                    <p className="text-xs text-muted-foreground">
+                      {peptide.genericName}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <CardTitle className="font-[family-name:var(--font-space-grotesk)] text-base">
-                    {peptide.name}
-                  </CardTitle>
-                  <p className="text-xs text-muted-foreground">
-                    {peptide.genericName}
-                  </p>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  {peptide.shortDescription}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {peptide.structureFunctionClaims.slice(0, 2).map((claim) => (
+                    <Badge key={claim} variant="secondary" className="text-xs">
+                      {claim}
+                    </Badge>
+                  ))}
                 </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                {peptide.shortDescription}
-              </p>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {peptide.structureFunctionClaims.slice(0, 2).map((claim) => (
-                  <Badge key={claim} variant="secondary" className="text-xs">
-                    {claim}
-                  </Badge>
-                ))}
-              </div>
-              <div className="mt-2 font-mono text-xs text-muted-foreground">
-                Typical: {peptide.defaultDosing.min}–{peptide.defaultDosing.max}{" "}
-                {peptide.defaultDosing.unit} &middot;{" "}
-                {peptide.defaultDosing.frequency}
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </Link>
         ))}
       </div>
 
@@ -118,15 +95,15 @@ export function QuizResults({ answers }: { answers: QuizAnswers }) {
 
       <div className="space-y-4 text-center">
         <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-semibold">
-          Ready to Start Your Protocol?
+          Ready to Get Started?
         </h3>
         <p className="text-sm text-muted-foreground">
-          Complete your intake to get a physician-reviewed, fully personalized
-          protocol with AI-powered dosing optimization.
+          Subscribe to begin your journey. Our licensed provider network
+          will handle your medical evaluation, prescribing, and pharmacy fulfillment.
         </p>
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <Button size="lg" className="gap-2" render={<Link href="/start" />}>
-            Start Full Intake
+            Start Your Journey
             <ArrowRight className="h-4 w-4" />
           </Button>
           <Button variant="outline" size="lg" render={<Link href="/pricing" />}>

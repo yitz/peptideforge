@@ -13,37 +13,37 @@ const TRUST_SIGNALS = [
     icon: Stethoscope,
     title: "Physician-Supervised",
     description:
-      "Every protocol is reviewed and approved by a licensed physician. No auto-prescribing. No shortcuts.",
+      "Every protocol is reviewed and prescribed by a licensed physician through our provider network. All medical decisions are made by your doctor.",
   },
   {
     icon: FlaskConical,
     title: "503A Compounding",
     description:
-      "All peptides compounded at licensed 503A pharmacies under strict FDA guidelines. Purity-tested, lot-tracked.",
+      "All peptides compounded at licensed 503A pharmacies under strict FDA guidelines. Purity-tested, lot-tracked, cold-chain shipped.",
   },
   {
     icon: Shield,
     title: "HIPAA Compliant",
     description:
-      "Enterprise-grade security with field-level encryption, immutable audit logs, and signed BAAs with every vendor.",
+      "Enterprise-grade security with end-to-end encryption, immutable audit logs, and signed BAAs with every vendor in the chain.",
   },
   {
     icon: Lock,
-    title: "Zero-Trust Architecture",
+    title: "Secure Platform",
     description:
-      "End-to-end encryption, role-based access control, and MFA enforcement for all provider and admin accounts.",
+      "End-to-end encryption, role-based access control, and MFA enforcement. Your data is protected at every layer.",
   },
   {
     icon: FileCheck,
-    title: "FDA-Compliant Claims",
+    title: "FDA-Compliant Content",
     description:
-      "All content passes through our AI compliance filter. Structure-function claims only. Zero disease treatment claims.",
+      "All educational content uses structure-function claims only. Zero disease treatment claims. Full regulatory compliance.",
   },
   {
     icon: HeartPulse,
-    title: "Lab-Verified Outcomes",
+    title: "Track Your Progress",
     description:
-      "Track your progress with lab markers and self-reported metrics. AI interprets trends and adjusts your protocol.",
+      "Log your wellness journey with self-reported metrics. Your provider uses your feedback to optimize your protocol over time.",
   },
 ] as const;
 
@@ -56,8 +56,9 @@ export function TrustSection() {
             Built for Trust. Engineered for Compliance.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            PeptideForge isn&apos;t a peptide vendor. It&apos;s a physician-supervised,
-            AI-enhanced telehealth platform built on enterprise-grade infrastructure.
+            PeptideForge connects you with licensed physicians and 503A pharmacies
+            through a premium, secure platform. All medical decisions are made
+            by your provider — never by software.
           </p>
         </div>
 

@@ -1,36 +1,30 @@
-import { ClipboardCheck, Brain, Stethoscope, Package, TrendingUp } from "lucide-react";
+import { Search, Stethoscope, Package, Truck } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const STEPS = [
   {
-    icon: ClipboardCheck,
-    title: "Smart Intake",
+    icon: Search,
+    title: "Explore & Match",
     description:
-      "Complete a 5-minute AI-guided health assessment. Our screening agent analyzes your goals, medical history, and contraindications in real-time.",
-  },
-  {
-    icon: Brain,
-    title: "AI Protocol Design",
-    description:
-      "Our protocol engine uses RAG over clinical literature to recommend the optimal peptide stack, dosing, and cycling — personalized to your biology.",
+      "Browse our peptide catalog and take a quick goal-matching quiz. Learn which peptides support your wellness objectives — recovery, performance, longevity, and more.",
   },
   {
     icon: Stethoscope,
-    title: "Provider Review",
+    title: "Provider Consultation",
     description:
-      "A licensed physician reviews your protocol, labs, and history. Every prescription requires human medical oversight — no exceptions.",
+      "After you subscribe, our licensed provider network handles your complete medical evaluation — health history, labs, and clinical review. Every prescription decision is made by a physician.",
   },
   {
     icon: Package,
     title: "503A Pharmacy Fulfillment",
     description:
-      "Your prescription is compounded at a licensed 503A pharmacy and shipped directly to your door with cold-chain handling.",
+      "Your prescription is compounded at a licensed 503A pharmacy under strict FDA guidelines. Purity-tested, lot-tracked, and shipped with cold-chain handling.",
   },
   {
-    icon: TrendingUp,
-    title: "AI-Coached Optimization",
+    icon: Truck,
+    title: "Track & Reorder",
     description:
-      "Track outcomes, log adherence, and receive AI-powered coaching that adapts your protocol based on your response and lab trends.",
+      "Monitor your order status, manage your subscription, and log your wellness journey. Your provider adjusts your protocol as needed based on your progress.",
   },
 ] as const;
 
@@ -43,8 +37,8 @@ export function HowItWorks() {
             How PeptideForge Works
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            From intake to optimization — every step is AI-enhanced
-            and physician-supervised.
+            A premium experience from discovery to delivery — with every
+            medical decision made by licensed physicians.
           </p>
         </div>
 

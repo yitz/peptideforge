@@ -24,7 +24,7 @@ export interface CreativeRequest {
   platform?: AdPlatform;
   peptideId?: string;
   goal?: string;
-  tone?: "clinical" | "aspirational" | "educational";
+  tone?: "premium" | "aspirational" | "educational";
   variants?: number;
 }
 
@@ -62,12 +62,15 @@ ABSOLUTE RULES:
 GOOD examples:
 - "Supports tissue repair and recovery" ✓
 - "Promotes healthy sleep patterns" ✓
-- "Your physician-supervised peptide protocol, personalized by AI" ✓
+- "Physician-supervised peptide therapy, delivered to your door" ✓
+- "Your provider personalizes your protocol to your goals" ✓
 
 BAD examples:
 - "Treats joint pain" ✗
 - "Cures insomnia" ✗
 - "Clinically proven to reverse aging" ✗
+- "AI recommends your protocol" ✗ (providers make medical decisions)
+- "Our AI screens your health history" ✗ (providers handle intake)
 
 ${peptideContext}
 
@@ -96,16 +99,16 @@ export const CREATIVE_EXAMPLES = {
   "ad-copy": {
     meta: `🧬 Your biology is unique. Your peptide protocol should be too.
 
-PeptideForge uses AI to match you with physician-supervised peptide therapy
-personalized to your goals — recovery, performance, longevity.
+Physician-supervised peptide therapy, personalized to your goals
+— recovery, performance, longevity.
 
-✅ Licensed providers
+✅ Licensed providers prescribe your protocol
 ✅ 503A compounding pharmacy
-✅ AI-optimized protocols
+✅ Cold-chain delivery to your door
 
-Take the 2-minute quiz →`,
+Take the 30-second quiz →`,
     google: `Personalized Peptide Therapy | Physician-Supervised | PeptideForge
-AI matches your goals to the right peptide protocol. Licensed providers.
+Physician-prescribed peptide protocols matched to your goals. Licensed providers.
 503A pharmacy. Take the free quiz.`,
   },
   "visual-prompt": `Ultra-premium product photography, single peptide vial with iridescent
