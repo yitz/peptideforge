@@ -53,12 +53,12 @@ export function TrustSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl font-bold tracking-tight sm:text-4xl">
-            Built for Trust. Engineered for Compliance.
+            Why Patients Trust AetherPeptide
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            AetherPeptide connects you with licensed physicians and 503A pharmacies
-            through a premium, secure platform. All medical decisions are made
-            by your provider — never by software.
+            Real physicians. Licensed pharmacies. Enterprise-grade security. Every
+            medical decision is made by your doctor &mdash; we built the platform
+            to make the experience seamless.
           </p>
         </div>
 

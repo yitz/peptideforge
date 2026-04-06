@@ -95,11 +95,12 @@ export function QuizResults({ answers }: { answers: QuizAnswers }) {
 
       <div className="space-y-4 text-center">
         <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-semibold">
-          Ready to Get Started?
+          Your Next Step: Connect With a Physician
         </h3>
         <p className="text-sm text-muted-foreground">
-          Your journey continues with physician review and personalized care
-          via our licensed provider network (Ola Digital Health).
+          Subscribe to begin your journey. A licensed physician from our provider
+          network (Ola Digital Health) will evaluate your health history, design
+          your personalized protocol, and prescribe via a licensed 503A pharmacy.
         </p>
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <Button size="lg" className="gap-2" render={<Link href="/start" />}>
@@ -114,8 +115,11 @@ export function QuizResults({ answers }: { answers: QuizAnswers }) {
 
       <p className="mt-8 text-center text-xs text-muted-foreground">
         This quiz provides educational information only and does not constitute
-        medical advice. All protocols require evaluation and prescription by a
-        licensed physician. Individual results may vary.
+        medical advice. AetherPeptide connects you with licensed physicians through
+        our partner network (Ola Digital Health). All medical decisions, prescriptions,
+        and protocols are handled exclusively by licensed providers. Compounded
+        peptides available only under valid prescription. Not intended to diagnose,
+        treat, cure, or prevent any disease.
       </p>
     </div>
   );

@@ -25,10 +25,13 @@ export function CTASection() {
                 Talk to a Provider
               </Button>
             </div>
-            <p className="mx-auto mt-6 max-w-md text-xs text-muted-foreground">
-              All treatments require evaluation by a licensed physician.
-              Individual results may vary. These statements have not been
-              evaluated by the FDA.
+            <p className="mx-auto mt-6 max-w-lg text-xs text-muted-foreground">
+              AetherPeptide connects you with licensed physicians through our
+              partner network (Ola Digital Health). All medical decisions and
+              prescriptions are made exclusively by licensed providers. Compounded
+              peptides available only under valid prescription. These statements
+              have not been evaluated by the FDA. Not intended to diagnose, treat,
+              cure, or prevent any disease.
             </p>
           </div>
         </div>

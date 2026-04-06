@@ -187,9 +187,12 @@ export default async function PeptideDetailPage({ params }: Props) {
         </div>
 
         <p className="mt-8 text-center text-xs text-muted-foreground">
-          These statements have not been evaluated by the FDA. This product is
-          not intended to diagnose, treat, cure, or prevent any disease. All
-          treatments require a prescription from a licensed physician.
+          AetherPeptide connects you with licensed physicians through our partner
+          network (Ola Digital Health). All medical decisions, prescriptions, and
+          protocols are handled exclusively by licensed providers. Compounded
+          peptides available only under valid prescription via 503A pharmacies.
+          These statements have not been evaluated by the FDA. Not intended to
+          diagnose, treat, cure, or prevent any disease.
         </p>
       </div>
     </div>
