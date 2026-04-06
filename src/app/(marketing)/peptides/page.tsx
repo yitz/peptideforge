@@ -31,9 +31,9 @@ export default function PeptideCatalogPage() {
             Peptide Catalog
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Currently compoundable peptides available through our licensed 503A
-            pharmacy network. Compoundability status is dynamically maintained
-            per FDA guidelines.
+            Educational information about peptides available through our licensed
+            503A pharmacy network. Availability depends on current FDA guidelines
+            and licensed provider confirmation.
           </p>
         </div>
 
@@ -91,13 +91,16 @@ export default function PeptideCatalogPage() {
           ))}
         </div>
 
-        <div className="mt-16 rounded-xl border border-border bg-card p-6 text-center">
+        <div className="mt-16 rounded-xl border border-border bg-muted/50 p-6 text-center">
           <p className="text-sm text-muted-foreground">
-            <strong>Compoundability Disclaimer:</strong> Peptide availability is
-            subject to change based on FDA compounding regulations.
-            PeptideForge dynamically maintains this registry. All
-            treatments require evaluation and prescription by a licensed
-            physician. These statements have not been evaluated by the FDA.
+            <strong>Important:</strong> Peptide availability depends on current FDA
+            compounding regulations and licensed provider confirmation. PeptideForge
+            provides a branded experience connecting you with licensed physicians
+            through our partner network. All medical decisions, prescriptions, and
+            protocols are handled exclusively by licensed providers. Compounded
+            peptides are available only under valid prescription via 503A pharmacies.
+            These statements have not been evaluated by the FDA. Not intended to
+            diagnose, treat, cure, or prevent any disease. Structure-function claims only.
           </p>
         </div>
       </div>

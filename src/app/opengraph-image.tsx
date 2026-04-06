@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "PeptideForge — AI-Powered Personalized Peptide Therapy";
+export const alt = "PeptideForge — Premium Physician-Supervised Peptide Therapy";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -61,7 +61,7 @@ export default function Image() {
             lineHeight: 1.4,
           }}
         >
-          AI-Powered Personalized Peptide Therapy
+          Physician-Supervised Peptide Therapy
         </div>
         <div
           style={{

@@ -46,7 +46,7 @@ export async function POST(request: Request) {
         case "visual-prompt":
           content = peptide
             ? generateVisualPrompt(peptide.name)
-            : CREATIVE_EXAMPLES["visual-prompt"];
+            : CREATIVE_EXAMPLES["visual-prompt"].dark;
           break;
         case "email-subject":
           content =
@@ -57,7 +57,7 @@ export async function POST(request: Request) {
         case "landing-headline":
           content = peptide
             ? `${peptide.name}: ${peptide.structureFunctionClaims[0]}`
-            : "Your Biology, Forged by AI — Physician-Supervised Peptide Therapy";
+            : "Premium Physician-Supervised Peptide Therapy — Delivered to Your Door";
           break;
         default:
           content = "Unsupported creative type";
@@ -113,7 +113,7 @@ function generatePeptideAdCopy(
 ): string {
   if (platform === "google") {
     return `${name} Peptide Therapy | Physician-Supervised | PeptideForge
-${claims[0]}. Personalized AI protocols. Licensed providers. 503A pharmacy.`;
+${claims[0]}. Physician-supervised protocols. Licensed providers. 503A pharmacy.`;
   }
 
   return `🧬 ${name} — Personalized to Your Biology
@@ -121,7 +121,7 @@ ${claims[0]}. Personalized AI protocols. Licensed providers. 503A pharmacy.`;
 ${claims.slice(0, 2).map((c) => `✅ ${c}`).join("\n")}
 
 Physician-supervised. 503A compounding pharmacy.
-AI-optimized dosing personalized to your goals.
+Your provider personalizes your protocol to your goals.
 
 Take the 2-minute quiz →`;
 }

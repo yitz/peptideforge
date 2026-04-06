@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Transparent pricing for AI-powered personalized peptide therapy. Monthly subscriptions include physician oversight, AI coaching, and 503A pharmacy fulfillment.",
+    "Transparent pricing for physician-supervised peptide therapy. Monthly subscriptions include provider consultations, 503A pharmacy fulfillment, and order tracking.",
 };
 
 const PLANS = [
@@ -19,43 +19,43 @@ const PLANS = [
     badge: null,
     features: [
       "1 peptide protocol",
-      "AI intake screening",
-      "Licensed physician review",
+      "Licensed physician consultation",
+      "Provider-designed protocol",
       "503A pharmacy fulfillment",
-      "Monthly check-in",
+      "Monthly provider check-in",
       "Email support",
     ],
   },
   {
     name: "Performance",
     price: 349,
-    description: "Multi-peptide stacking with AI optimization",
+    description: "Multi-peptide stacking with provider guidance",
     badge: "Most Popular",
     features: [
       "Up to 3 peptide stack",
-      "AI protocol optimization engine",
-      "Licensed physician review",
+      "Licensed physician consultation",
+      "Provider-optimized protocol",
       "503A pharmacy fulfillment",
-      "Bi-weekly AI coaching check-ins",
-      "Lab trend analysis",
-      "Outcome tracking dashboard",
+      "Bi-weekly provider check-ins",
+      "Lab ordering support",
+      "Order tracking dashboard",
       "Priority support",
     ],
   },
   {
     name: "Longevity Elite",
     price: 599,
-    description: "Comprehensive protocol with predictive modeling",
+    description: "Comprehensive protocol with ongoing provider care",
     badge: "Maximum Results",
     features: [
       "Unlimited peptide protocols",
-      "Full AI personalization suite",
-      "Predictive outcome modeling",
-      "Weekly AI adherence coaching",
-      "Comprehensive lab interpretation",
-      "Before/after tracking",
+      "Dedicated physician oversight",
+      "Comprehensive lab interpretation by provider",
+      "Weekly provider check-ins",
+      "Progress tracking dashboard",
+      "Before/after wellness logging",
       "Direct provider messaging",
-      "Quarterly protocol reviews",
+      "Quarterly protocol reviews by physician",
       "Concierge support",
     ],
   },
@@ -71,7 +71,7 @@ export default function PricingPage() {
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
             Every plan includes physician supervision, 503A pharmacy fulfillment,
-            and AI-powered personalization. No hidden fees.
+            and a premium branded experience. No hidden fees.
           </p>
         </div>
 
@@ -116,7 +116,7 @@ export default function PricingPage() {
                 <Button
                   className="mt-8 w-full gap-2"
                   variant={plan.badge === "Most Popular" ? "default" : "outline"}
-                  render={<Link href="/quiz" />}
+                  render={<Link href="/start" />}
                 >
                   Get Started
                   <ArrowRight className="h-4 w-4" />
@@ -134,15 +134,18 @@ export default function PricingPage() {
               </h3>
               <div className="mt-4 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
                 <p>HIPAA-compliant platform</p>
-                <p>Field-level PHI encryption</p>
                 <p>Licensed physician oversight</p>
                 <p>503A compounding pharmacy</p>
                 <p>Cold-chain shipping</p>
-                <p>FDA-compliant protocols</p>
+                <p>Order tracking dashboard</p>
+                <p>Cancel or pause anytime</p>
               </div>
-              <p className="mt-4 text-xs text-muted-foreground">
-                Peptide costs are included in your subscription. Pricing does not
-                include lab work. Cancel or pause anytime.
+              <p className="mt-6 text-xs text-muted-foreground">
+                Peptide costs are included in your subscription. Lab work may
+                be additional. All medical decisions, prescriptions, and
+                protocols are determined exclusively by your licensed physician.
+                PeptideForge does not provide medical advice. These statements
+                have not been evaluated by the FDA.
               </p>
             </CardContent>
           </Card>

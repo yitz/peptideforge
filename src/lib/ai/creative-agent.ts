@@ -97,28 +97,35 @@ Output format: A single detailed image prompt, 1-3 sentences.`;
  */
 export const CREATIVE_EXAMPLES = {
   "ad-copy": {
-    meta: `🧬 Your biology is unique. Your peptide protocol should be too.
+    meta: `🧬 Premium peptide therapy, supervised by real physicians.
 
-Physician-supervised peptide therapy, personalized to your goals
-— recovery, performance, longevity.
+Your doctor designs your protocol. We handle the rest
+— 503A pharmacy compounding, cold-chain delivery, order tracking.
 
-✅ Licensed providers prescribe your protocol
+✅ Licensed physicians prescribe your protocol
 ✅ 503A compounding pharmacy
-✅ Cold-chain delivery to your door
+✅ Premium branded experience
 
-Take the 30-second quiz →`,
-    google: `Personalized Peptide Therapy | Physician-Supervised | PeptideForge
-Physician-prescribed peptide protocols matched to your goals. Licensed providers.
-503A pharmacy. Take the free quiz.`,
+Explore peptides that support your goals →`,
+    google: `Physician-Supervised Peptide Therapy | 503A Pharmacy | PeptideForge
+Licensed doctors design your protocol. Premium branded experience. 503A
+compounding pharmacy. Explore peptides.`,
   },
-  "visual-prompt": `Ultra-premium product photography, single peptide vial with iridescent
+  "visual-prompt": {
+    dark: `Ultra-premium product photography, single peptide vial with iridescent
 liquid on dark matte surface, clinical laboratory setting with soft teal-blue
 ambient lighting, molecular structure hologram floating above, shallow depth
 of field, editorial pharma aesthetic, clean minimalist composition, 8k
 --ar 16:9 --style raw --v 6.1`,
+    light: `Premium wellness product photography, single peptide vial with clear liquid
+on pristine white marble surface, bright airy clinical laboratory with natural
+light streaming through floor-to-ceiling windows, soft teal accent lighting,
+fresh green botanical accents, clean minimalist composition, editorial skincare
+aesthetic, high-key lighting, 8k --ar 16:9 --style raw --v 6.1`,
+  },
   "email-subject": [
-    "Your personalized peptide protocol is ready",
-    "The science behind your recovery protocol",
-    "3 reasons physician-supervised peptides outperform generic vendors",
+    "Your physician-supervised peptide journey starts here",
+    "The science behind peptide therapy for recovery support",
+    "Why physician-supervised beats generic peptide vendors",
   ],
 };

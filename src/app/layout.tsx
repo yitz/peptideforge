@@ -8,11 +8,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "PeptideForge — AI-Powered Personalized Peptide Therapy",
+    default: "PeptideForge — Premium Physician-Supervised Peptide Therapy",
     template: "%s | PeptideForge",
   },
   description:
-    "The most intelligent, physician-supervised peptide therapy platform. AI-driven protocols for recovery, performance, longevity, and optimized human biology.",
+    "Premium physician-supervised peptide therapy. Personalized protocols for recovery, performance, and longevity — compounded at licensed 503A pharmacies.",
   keywords: [
     "peptide therapy",
     "BPC-157",

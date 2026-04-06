@@ -35,8 +35,8 @@ export function SiteFooter() {
               </span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
-              AI-powered personalized peptide therapy.
-              Physician-supervised. Science-backed.
+              Physician-supervised peptide therapy.
+              Licensed providers. 503A pharmacies.
             </p>
           </div>
           {Object.entries(FOOTER_LINKS).map(([category, links]) => (
@@ -60,16 +60,23 @@ export function SiteFooter() {
 
         <Separator className="my-8" />
 
-        <div className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground sm:flex-row">
+        <div className="rounded-lg border border-border bg-muted/50 p-4 text-center text-xs text-muted-foreground">
+          <p>
+            PeptideForge provides a branded experience connecting you with licensed
+            physicians through our partner network. All medical decisions,
+            prescriptions, and protocols are handled exclusively by licensed providers.
+            Compounded peptides are available only under valid prescription via 503A
+            pharmacies. These statements have not been evaluated by the FDA. Not
+            intended to diagnose, treat, cure, or prevent any disease.
+            Structure-function claims only.
+          </p>
+        </div>
+
+        <div className="mt-6 flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground sm:flex-row">
           <p>&copy; {new Date().getFullYear()} PeptideForge. All rights reserved.</p>
-          <div className="max-w-2xl text-center sm:text-right">
-            <p>
-              PeptideForge facilitates access to physician-supervised peptide therapy through
-              licensed telehealth providers and 503A compounding pharmacies. All treatments
-              require a prescription from a licensed provider. These statements have not been
-              evaluated by the FDA. This platform is not intended to diagnose, treat, cure, or
-              prevent any disease.
-            </p>
+          <div className="flex gap-4">
+            <Link href="/privacy" className="transition-colors hover:text-foreground">Privacy</Link>
+            <Link href="/terms" className="transition-colors hover:text-foreground">Terms</Link>
           </div>
         </div>
       </div>
