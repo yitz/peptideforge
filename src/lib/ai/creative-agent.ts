@@ -63,7 +63,7 @@ GOOD examples:
 - "Supports tissue repair and recovery" ✓
 - "Promotes healthy sleep patterns" ✓
 - "Physician-supervised peptide therapy, delivered to your door" ✓
-- "Your provider personalizes your protocol to your goals" ✓
+- "Licensed physicians make every medical decision independently" ✓
 
 BAD examples:
 - "Treats joint pain" ✗
@@ -99,8 +99,8 @@ export const CREATIVE_EXAMPLES = {
   "ad-copy": {
     meta: `🧬 AetherPeptide — Premium peptide therapy, supervised by real physicians.
 
-Your doctor designs your protocol. We handle the rest
-— 503A pharmacy compounding, cold-chain delivery, order tracking.
+Licensed physicians make every medical decision.
+We make the experience seamless — 503A pharmacy, cold-chain delivery, order tracking.
 
 ✅ Licensed physicians prescribe your protocol
 ✅ 503A compounding pharmacy

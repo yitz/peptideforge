@@ -121,7 +121,7 @@ ${claims[0]}. Physician-supervised protocols. Licensed providers. 503A pharmacy.
 ${claims.slice(0, 2).map((c) => `✅ ${c}`).join("\n")}
 
 Physician-supervised. 503A compounding pharmacy.
-Your provider personalizes your protocol to your goals.
+Licensed physicians make every medical decision independently.
 
 Take the 2-minute quiz →`;
 }

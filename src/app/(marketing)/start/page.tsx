@@ -17,7 +17,7 @@ import { Separator } from "@/components/ui/separator";
 export const metadata: Metadata = {
   title: "Start Your Journey",
   description:
-    "Begin your physician-supervised peptide therapy journey. Our licensed provider network handles your medical evaluation, prescribing, and fulfillment.",
+    "Begin your physician-supervised peptide therapy journey. Licensed physicians independently handle all medical evaluation, prescribing, and clinical decisions.",
 };
 
 const JOURNEY_STEPS = [
@@ -29,9 +29,9 @@ const JOURNEY_STEPS = [
   },
   {
     icon: Stethoscope,
-    title: "Medical Evaluation by Your Provider",
+    title: "Independent Physician Evaluation",
     description:
-      "A licensed physician from our provider network reviews your complete health history, orders labs if needed, and determines your personalized protocol. All medical decisions are made by your doctor.",
+      "A licensed physician independently reviews your health history, orders labs if needed, and determines whether a peptide protocol is appropriate for you. All clinical decisions are the physician\u2019s alone.",
   },
   {
     icon: FlaskConical,
@@ -118,7 +118,7 @@ export default function StartPage() {
             <div className="grid gap-3 sm:grid-cols-2">
               {[
                 "Licensed physician consultation",
-                "Personalized protocol by your provider",
+                "Protocol determined by your physician",
                 "503A compounding pharmacy",
                 "Cold-chain shipping",
                 "Order tracking dashboard",
