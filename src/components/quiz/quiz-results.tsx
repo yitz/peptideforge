@@ -95,12 +95,13 @@ export function QuizResults({ answers }: { answers: QuizAnswers }) {
 
       <div className="space-y-4 text-center">
         <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-semibold">
-          Your Next Step: Connect With a Physician
+          Your Next Step
         </h3>
         <p className="text-sm text-muted-foreground">
-          Subscribe to begin your journey. A licensed physician from our provider
-          network (Ola Digital Health) will evaluate your health history, design
-          your personalized protocol, and prescribe via a licensed 503A pharmacy.
+          When you subscribe, you&apos;ll be connected with a licensed physician
+          through our provider network (Ola Digital Health). Your doctor will
+          independently evaluate your health history and determine whether a
+          peptide protocol is appropriate for you.
         </p>
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <Button size="lg" className="gap-2" render={<Link href="/start" />}>

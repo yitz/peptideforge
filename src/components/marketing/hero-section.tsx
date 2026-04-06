@@ -16,16 +16,15 @@ export function HeroSection() {
           </Badge>
 
           <h1 className="font-[family-name:var(--font-space-grotesk)] text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            The Future of{" "}
-            <span className="text-primary">Peptide Therapy</span>{" "}
-            Is Here
+            Peptide Therapy,{" "}
+            <span className="text-primary">Elevated</span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-            Physician-supervised. 503A pharmacy compounded. Delivered to your door.
-            AetherPeptide is the premium peptide therapy experience &mdash; where
-            licensed doctors design your protocol and world-class pharmacies
-            bring it to life.
+            AetherPeptide is the premium branded experience for
+            physician-supervised peptide therapy. We connect you with licensed
+            providers and 503A compounding pharmacies &mdash; your doctor
+            handles the rest.
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

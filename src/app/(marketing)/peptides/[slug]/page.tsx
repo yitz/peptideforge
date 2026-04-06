@@ -111,8 +111,8 @@ export default async function PeptideDetailPage({ params }: Props) {
                   </div>
                 )}
                 <p className="text-xs text-muted-foreground">
-                  Dosing is personalized by your provider based on labs, weight,
-                  and goals. These ranges are for reference only.
+                  Actual dosing is determined independently by your licensed
+                  physician. These ranges are for educational reference only.
                 </p>
               </div>
             </CardContent>

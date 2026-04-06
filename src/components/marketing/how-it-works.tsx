@@ -12,7 +12,7 @@ const STEPS = [
     icon: Stethoscope,
     title: "Provider Consultation",
     description:
-      "After you subscribe, our licensed provider network handles your complete medical evaluation — health history, labs, and clinical review. Every prescription decision is made by a physician.",
+      "After you subscribe, we connect you with a licensed physician through our provider network (Ola Digital Health). Your doctor independently evaluates your health history, orders labs if needed, and determines whether a peptide protocol is appropriate.",
   },
   {
     icon: Package,
@@ -24,7 +24,7 @@ const STEPS = [
     icon: Truck,
     title: "Track & Reorder",
     description:
-      "Monitor your order status, manage your subscription, and log your wellness journey. Your provider adjusts your protocol as needed based on your progress.",
+      "Monitor your order status, manage your subscription, and log your wellness journey through the AetherPeptide dashboard.",
   },
 ] as const;
 

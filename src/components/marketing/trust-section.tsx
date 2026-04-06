@@ -13,7 +13,7 @@ const TRUST_SIGNALS = [
     icon: Stethoscope,
     title: "Physician-Supervised",
     description:
-      "Every protocol is reviewed and prescribed by a licensed physician through our provider network. All medical decisions are made by your doctor.",
+      "We connect you with licensed physicians through our provider network (Ola Digital Health). All medical decisions and prescriptions are made independently by your doctor.",
   },
   {
     icon: FlaskConical,
@@ -43,7 +43,7 @@ const TRUST_SIGNALS = [
     icon: HeartPulse,
     title: "Track Your Progress",
     description:
-      "Log your wellness journey with self-reported metrics. Your provider uses your feedback to optimize your protocol over time.",
+      "Log your wellness journey with self-reported metrics. Share your progress with your provider at your next consultation.",
   },
 ] as const;
 
@@ -53,12 +53,12 @@ export function TrustSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl font-bold tracking-tight sm:text-4xl">
-            Why Patients Trust AetherPeptide
+            Built on Trust. Backed by Real Physicians.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Real physicians. Licensed pharmacies. Enterprise-grade security. Every
-            medical decision is made by your doctor &mdash; we built the platform
-            to make the experience seamless.
+            AetherPeptide is a branded platform &mdash; not a medical provider.
+            We connect you with licensed physicians and 503A pharmacies.
+            Every medical decision is made independently by your doctor.
           </p>
         </div>
 
