@@ -49,7 +49,7 @@ const TRUST_SIGNALS = [
 
 export function TrustSection() {
   return (
-    <section className="border-t border-border bg-card/30 py-20 sm:py-28">
+    <section className="border-t border-border bg-secondary/50 py-20 dark:bg-card/30 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl font-bold tracking-tight sm:text-4xl">

@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--color-primary)/15,transparent)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--color-primary)/10,transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--color-primary)/15,transparent)]" />
 
       <div className="mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
@@ -69,7 +69,7 @@ function MetricCard({
   label: string;
 }) {
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-border/50 bg-card/50 px-5 py-4 backdrop-blur-sm">
+    <div className="flex items-center gap-3 rounded-xl border border-border/60 bg-card px-5 py-4 shadow-sm dark:border-border/50 dark:bg-card/50 dark:shadow-none dark:backdrop-blur-sm">
       {icon}
       <div>
         <p className="font-[family-name:var(--font-space-grotesk)] text-lg font-bold">{metric}</p>
