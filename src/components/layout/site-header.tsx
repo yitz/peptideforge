@@ -23,7 +23,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-2">
           <FlaskConical className="h-7 w-7 text-primary" />
           <span className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold tracking-tight">
-            PeptideForge
+            AetherPeptide
           </span>
         </Link>
 
@@ -61,7 +61,7 @@ export function SiteHeader() {
                 <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
                   <FlaskConical className="h-6 w-6 text-primary" />
                   <span className="font-[family-name:var(--font-space-grotesk)] text-lg font-bold">
-                    PeptideForge
+                    AetherPeptide
                   </span>
                 </Link>
                 <nav className="flex flex-col gap-1">

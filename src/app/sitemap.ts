@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getCompoundablePeptides } from "@/lib/peptides/registry";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://peptideforge.com";
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://aetherpeptide.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const peptides = getCompoundablePeptides();

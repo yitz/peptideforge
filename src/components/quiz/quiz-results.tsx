@@ -98,8 +98,8 @@ export function QuizResults({ answers }: { answers: QuizAnswers }) {
           Ready to Get Started?
         </h3>
         <p className="text-sm text-muted-foreground">
-          Subscribe to begin your journey. Our licensed provider network
-          will handle your medical evaluation, prescribing, and pharmacy fulfillment.
+          Your journey continues with physician review and personalized care
+          via our licensed provider network (Ola Digital Health).
         </p>
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <Button size="lg" className="gap-2" render={<Link href="/start" />}>

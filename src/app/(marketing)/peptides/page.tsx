@@ -94,13 +94,14 @@ export default function PeptideCatalogPage() {
         <div className="mt-16 rounded-xl border border-border bg-muted/50 p-6 text-center">
           <p className="text-sm text-muted-foreground">
             <strong>Important:</strong> Peptide availability depends on current FDA
-            compounding regulations and licensed provider confirmation. PeptideForge
-            provides a branded experience connecting you with licensed physicians
-            through our partner network. All medical decisions, prescriptions, and
-            protocols are handled exclusively by licensed providers. Compounded
-            peptides are available only under valid prescription via 503A pharmacies.
-            These statements have not been evaluated by the FDA. Not intended to
-            diagnose, treat, cure, or prevent any disease. Structure-function claims only.
+            compounding regulations and licensed provider confirmation. AetherPeptide
+            connects you with licensed physicians through our partner network
+            (Ola Digital Health as primary provider). All medical decisions,
+            prescriptions, and protocols are handled exclusively by licensed
+            providers. Compounded peptides available only under valid prescription
+            via 503A pharmacies. These statements have not been evaluated by the
+            FDA. Not intended to diagnose, treat, cure, or prevent any disease.
+            Structure-function claims only.
           </p>
         </div>
       </div>

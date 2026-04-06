@@ -34,7 +34,7 @@ export function HowItWorks() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl font-bold tracking-tight sm:text-4xl">
-            How PeptideForge Works
+            How AetherPeptide Works
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             A premium experience from discovery to delivery — with every

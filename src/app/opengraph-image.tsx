@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "PeptideForge — Premium Physician-Supervised Peptide Therapy";
+export const alt = "AetherPeptide — Premium Physician-Supervised Peptide Therapy";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -49,7 +49,7 @@ export default function Image() {
               letterSpacing: "-0.02em",
             }}
           >
-            PeptideForge
+            AetherPeptide
           </span>
         </div>
         <div

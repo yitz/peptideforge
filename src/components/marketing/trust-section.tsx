@@ -56,7 +56,7 @@ export function TrustSection() {
             Built for Trust. Engineered for Compliance.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            PeptideForge connects you with licensed physicians and 503A pharmacies
+            AetherPeptide connects you with licensed physicians and 503A pharmacies
             through a premium, secure platform. All medical decisions are made
             by your provider — never by software.
           </p>

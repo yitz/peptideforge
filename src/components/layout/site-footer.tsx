@@ -31,7 +31,7 @@ export function SiteFooter() {
             <Link href="/" className="flex items-center gap-2">
               <FlaskConical className="h-6 w-6 text-primary" />
               <span className="font-[family-name:var(--font-space-grotesk)] text-lg font-bold">
-                PeptideForge
+                AetherPeptide
               </span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground">
@@ -62,18 +62,18 @@ export function SiteFooter() {
 
         <div className="rounded-lg border border-border bg-muted/50 p-4 text-center text-xs text-muted-foreground">
           <p>
-            PeptideForge provides a branded experience connecting you with licensed
-            physicians through our partner network. All medical decisions,
-            prescriptions, and protocols are handled exclusively by licensed providers.
-            Compounded peptides are available only under valid prescription via 503A
-            pharmacies. These statements have not been evaluated by the FDA. Not
-            intended to diagnose, treat, cure, or prevent any disease.
-            Structure-function claims only.
+            AetherPeptide connects you with licensed physicians through our
+            partner network (Ola Digital Health as primary provider). All medical
+            decisions, prescriptions, and protocols are handled exclusively by
+            licensed providers. Compounded peptides available only under valid
+            prescription via 503A pharmacies. These statements have not been
+            evaluated by the FDA. Not intended to diagnose, treat, cure, or
+            prevent any disease. Structure-function claims only.
           </p>
         </div>
 
         <div className="mt-6 flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} PeptideForge. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} AetherPeptide. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy" className="transition-colors hover:text-foreground">Privacy</Link>
             <Link href="/terms" className="transition-colors hover:text-foreground">Terms</Link>

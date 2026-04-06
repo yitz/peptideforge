@@ -112,7 +112,7 @@ function generatePeptideAdCopy(
   platform: "meta" | "google"
 ): string {
   if (platform === "google") {
-    return `${name} Peptide Therapy | Physician-Supervised | PeptideForge
+    return `${name} Peptide Therapy | Physician-Supervised | AetherPeptide
 ${claims[0]}. Physician-supervised protocols. Licensed providers. 503A pharmacy.`;
   }
 

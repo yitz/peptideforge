@@ -55,9 +55,10 @@ export function HeroSection() {
           </div>
 
           <p className="mt-8 text-xs text-muted-foreground">
-            PeptideForge connects you with licensed physicians through our provider
-            network. All medical decisions and prescriptions are made by your doctor.
-            Not intended to diagnose, treat, cure, or prevent any disease.
+            AetherPeptide connects you with licensed physicians through our
+            partner network (Ola Digital Health). All medical decisions and
+            prescriptions are made exclusively by your doctor. Not intended to
+            diagnose, treat, cure, or prevent any disease.
           </p>
         </div>
       </div>

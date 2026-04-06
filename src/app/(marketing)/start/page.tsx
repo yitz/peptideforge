@@ -43,7 +43,7 @@ const JOURNEY_STEPS = [
     icon: Truck,
     title: "Delivered to Your Door",
     description:
-      "Cold-chain shipping direct to you. Track your order in real-time through your PeptideForge dashboard.",
+      "Cold-chain shipping direct to you. Track your order in real-time through your AetherPeptide dashboard.",
   },
 ] as const;
 
@@ -60,7 +60,7 @@ export default function StartPage() {
             Your Journey Starts Here
           </h1>
           <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-            PeptideForge connects you with licensed physicians and 503A
+            AetherPeptide connects you with licensed physicians and 503A
             pharmacies for a premium, fully supervised peptide therapy experience.
           </p>
         </div>
@@ -73,10 +73,11 @@ export default function StartPage() {
                 All medical decisions are made by licensed physicians
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
-                PeptideForge is a branded platform that connects you with our
-                provider network. Your physician handles intake, health
-                evaluation, prescribing, and ongoing protocol management.
-                We never make medical recommendations.
+                AetherPeptide connects you with licensed physicians through
+                our partner network (Ola Digital Health as primary provider).
+                Your physician handles intake, health evaluation, prescribing,
+                and ongoing protocol management. We never make medical
+                recommendations.
               </p>
             </div>
           </CardContent>
@@ -146,7 +147,7 @@ export default function StartPage() {
 
         <p className="mt-8 text-center text-xs text-muted-foreground">
           All treatments require evaluation and prescription by a licensed
-          physician. PeptideForge does not provide medical advice, diagnose
+          physician. AetherPeptide does not provide medical advice, diagnose
           conditions, or recommend treatments. These statements have not
           been evaluated by the FDA.
         </p>

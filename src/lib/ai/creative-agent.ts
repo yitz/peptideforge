@@ -47,7 +47,7 @@ ${peptide.structureFunctionClaims.map((c) => `- ${c}`).join("\n")}
 `
     : "";
 
-  return `You are PeptideForge's marketing creative agent. You generate high-converting,
+  return `You are AetherPeptide's marketing creative agent. You generate high-converting,
 FDA-compliant marketing content for a physician-supervised peptide telehealth platform.
 
 ABSOLUTE RULES:
@@ -97,7 +97,7 @@ Output format: A single detailed image prompt, 1-3 sentences.`;
  */
 export const CREATIVE_EXAMPLES = {
   "ad-copy": {
-    meta: `🧬 Premium peptide therapy, supervised by real physicians.
+    meta: `🧬 AetherPeptide — Premium peptide therapy, supervised by real physicians.
 
 Your doctor designs your protocol. We handle the rest
 — 503A pharmacy compounding, cold-chain delivery, order tracking.
@@ -106,8 +106,8 @@ Your doctor designs your protocol. We handle the rest
 ✅ 503A compounding pharmacy
 ✅ Premium branded experience
 
-Explore peptides that support your goals →`,
-    google: `Physician-Supervised Peptide Therapy | 503A Pharmacy | PeptideForge
+Explore peptides that support your wellness goals →`,
+    google: `Physician-Supervised Peptide Therapy | 503A Pharmacy | AetherPeptide
 Licensed doctors design your protocol. Premium branded experience. 503A
 compounding pharmacy. Explore peptides.`,
   },

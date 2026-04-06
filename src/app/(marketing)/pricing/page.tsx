@@ -144,7 +144,7 @@ export default function PricingPage() {
                 Peptide costs are included in your subscription. Lab work may
                 be additional. All medical decisions, prescriptions, and
                 protocols are determined exclusively by your licensed physician.
-                PeptideForge does not provide medical advice. These statements
+                AetherPeptide does not provide medical advice. These statements
                 have not been evaluated by the FDA.
               </p>
             </CardContent>

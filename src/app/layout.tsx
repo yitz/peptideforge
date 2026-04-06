@@ -8,8 +8,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "PeptideForge — Premium Physician-Supervised Peptide Therapy",
-    template: "%s | PeptideForge",
+    default: "AetherPeptide — Premium Physician-Supervised Peptide Therapy",
+    template: "%s | AetherPeptide",
   },
   description:
     "Premium physician-supervised peptide therapy. Personalized protocols for recovery, performance, and longevity — compounded at licensed 503A pharmacies.",
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
     "biohacking",
   ],
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://peptideforge.com"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://aetherpeptide.com"
   ),
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "PeptideForge",
+    siteName: "AetherPeptide",
   },
 };
 
