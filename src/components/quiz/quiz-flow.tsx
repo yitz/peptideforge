@@ -80,7 +80,7 @@ export function QuizFlow() {
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">
             This is for educational matching only — not a medical assessment.
-            Your licensed provider will determine the right protocol for you.
+            A licensed physician will independently determine whether a protocol is appropriate for you.
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2">
             {GOAL_OPTIONS.map((opt) => (

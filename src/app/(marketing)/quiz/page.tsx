@@ -4,7 +4,7 @@ import { QuizFlow } from "@/components/quiz/quiz-flow";
 export const metadata: Metadata = {
   title: "Find Your Protocol — Personalization Quiz",
   description:
-    "Select your wellness goals and explore which peptides may be a fit. Educational matching only — your licensed provider determines your protocol.",
+    "Select your wellness goals and explore which peptides may be a fit. Educational matching only — all clinical decisions are made independently by licensed physicians.",
 };
 
 export default function QuizPage() {
