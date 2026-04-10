@@ -96,7 +96,7 @@ export default function PeptideCatalogPage() {
             <strong>Important:</strong> Peptide availability depends on current FDA
             compounding regulations and licensed provider confirmation. AetherPeptide
             connects you with licensed physicians through our partner network
-            (Ola Digital Health as primary provider). All medical decisions,
+            (partner provider TBD). All medical decisions,
             prescriptions, and protocols are handled exclusively by licensed
             providers. Compounded peptides available only under valid prescription
             via 503A pharmacies. These statements have not been evaluated by the

@@ -99,7 +99,7 @@ export function QuizResults({ answers }: { answers: QuizAnswers }) {
         </h3>
         <p className="text-sm text-muted-foreground">
           When you subscribe, you&apos;ll be connected with a licensed physician
-          through our provider network (Ola Digital Health). Your doctor will
+          through our provider network (partner provider TBD). Your doctor will
           independently evaluate your health history and determine whether a
           peptide protocol is appropriate for you.
         </p>
@@ -117,7 +117,7 @@ export function QuizResults({ answers }: { answers: QuizAnswers }) {
       <p className="mt-8 text-center text-xs text-muted-foreground">
         This quiz provides educational information only and does not constitute
         medical advice. AetherPeptide connects you with licensed physicians through
-        our partner network (Ola Digital Health). All medical decisions, prescriptions,
+        our partner network (partner provider TBD). All medical decisions, prescriptions,
         and protocols are handled exclusively by licensed providers. Compounded
         peptides available only under valid prescription. Not intended to diagnose,
         treat, cure, or prevent any disease.

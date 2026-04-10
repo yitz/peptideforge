@@ -27,7 +27,7 @@ export function CTASection() {
             </div>
             <p className="mx-auto mt-6 max-w-lg text-xs text-muted-foreground">
               AetherPeptide connects you with licensed physicians through our
-              partner network (Ola Digital Health). All medical decisions and
+              partner network (partner provider TBD). All medical decisions and
               prescriptions are made exclusively by licensed providers. Compounded
               peptides available only under valid prescription. These statements
               have not been evaluated by the FDA. Not intended to diagnose, treat,

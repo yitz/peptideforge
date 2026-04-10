@@ -63,7 +63,7 @@ export function SiteFooter() {
         <div className="rounded-lg border border-border bg-muted/50 p-4 text-center text-xs text-muted-foreground">
           <p>
             AetherPeptide connects you with licensed physicians through our
-            partner network (Ola Digital Health as primary provider). All medical
+            partner network (partner provider TBD). All medical
             decisions, prescriptions, and protocols are handled exclusively by
             licensed providers. Compounded peptides available only under valid
             prescription via 503A pharmacies. These statements have not been

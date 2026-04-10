@@ -50,7 +50,7 @@ NEVER ALLOWED:
 
 This exact disclaimer (or close variant) MUST appear on every major page (hero, catalog, quiz, footer, start page):
 
-> AetherPeptide connects you with licensed physicians through our partner network (Ola Digital Health). All medical decisions, prescriptions, and protocols are handled exclusively by licensed providers. Compounded peptides available only under valid prescription via 503A pharmacies. Not intended to diagnose, treat, cure, or prevent any disease.
+> AetherPeptide connects you with licensed physicians through our partner network (our licensed provider network (partner TBD)). All medical decisions, prescriptions, and protocols are handled exclusively by licensed providers. Compounded peptides available only under valid prescription via 503A pharmacies. Not intended to diagnose, treat, cure, or prevent any disease.
 
 ### 4. Quiz Rules
 
@@ -69,7 +69,7 @@ NO medical history, NO symptoms, NO age/sex for clinical purposes, NO lab questi
 ### 5. Provider Handoff
 
 After quiz or checkout, the flow hands off to licensed providers:
-- "Your journey continues with physician review and personalized care via our licensed provider network (Ola Digital Health)"
+- "Your journey continues with physician review and personalized care via our licensed provider network (our licensed provider network (partner TBD))"
 - Make it clear that a real doctor handles intake, evaluation, prescribing, and fulfillment
 - Never imply AetherPeptide makes medical decisions
 
@@ -104,7 +104,7 @@ Ruby errors in output are cosmetic — push succeeds.
 | Name | AetherPeptide |
 | Domain | aetherpeptide.com |
 | Primary color | Teal — oklch(0.52 0.14 180) light / oklch(0.7 0.17 190) dark |
-| Provider partner | Ola Digital Health (primary) |
+| Provider partner | Licensed provider network (partner TBD) |
 | Positioning | Premium physician-supervised peptide therapy |
 
 ## What To Do When Starting Work

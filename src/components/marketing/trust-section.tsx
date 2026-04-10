@@ -13,7 +13,7 @@ const TRUST_SIGNALS = [
     icon: Stethoscope,
     title: "Physician-Supervised",
     description:
-      "We connect you with licensed physicians through our provider network (Ola Digital Health). All medical decisions and prescriptions are made independently by your doctor.",
+      "We connect you with licensed physicians through our provider network (partner provider TBD). All medical decisions and prescriptions are made independently by your doctor.",
   },
   {
     icon: FlaskConical,

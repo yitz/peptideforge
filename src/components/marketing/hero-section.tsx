@@ -56,7 +56,7 @@ export function HeroSection() {
 
           <p className="mt-8 text-xs text-muted-foreground">
             AetherPeptide connects you with licensed physicians through our
-            partner network (Ola Digital Health). All medical decisions and
+            partner network (partner provider TBD). All medical decisions and
             prescriptions are made exclusively by your doctor. Not intended to
             diagnose, treat, cure, or prevent any disease.
           </p>

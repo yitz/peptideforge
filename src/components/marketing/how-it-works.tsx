@@ -12,7 +12,7 @@ const STEPS = [
     icon: Stethoscope,
     title: "Provider Consultation",
     description:
-      "After you subscribe, we connect you with a licensed physician through our provider network (Ola Digital Health). Your doctor independently evaluates your health history, orders labs if needed, and determines whether a peptide protocol is appropriate.",
+      "After you subscribe, we connect you with a licensed physician through our provider network (partner provider TBD). Your doctor independently evaluates your health history, orders labs if needed, and determines whether a peptide protocol is appropriate.",
   },
   {
     icon: Package,

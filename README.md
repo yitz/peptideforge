@@ -4,7 +4,7 @@ Premium physician-supervised peptide therapy platform. A branded telehealth stor
 
 ## What This Is
 
-AetherPeptide is a **branded storefront and marketing machine** that connects customers with licensed physicians through our partner network (Ola Digital Health as primary provider). We own the customer experience: discovery, education, quiz, checkout, order tracking. All medical decisions — intake, evaluation, prescribing, protocol design, lab interpretation — are handled exclusively by licensed providers.
+AetherPeptide is a **branded storefront and marketing machine** that connects customers with licensed physicians through our partner network (licensed provider network (partner TBD) as primary provider). We own the customer experience: discovery, education, quiz, checkout, order tracking. All medical decisions — intake, evaluation, prescribing, protocol design, lab interpretation — are handled exclusively by licensed providers.
 
 ## What This Is NOT
 
@@ -31,7 +31,7 @@ AetherPeptide is a **branded storefront and marketing machine** that connects cu
 
 - **Structure-function claims ONLY** — "Supports tissue repair and recovery" is OK. "Treats arthritis" is NOT.
 - **Never imply AI makes medical decisions** — Providers make all medical decisions. AI is used only for marketing creative, site building, and non-clinical support.
-- **Mandatory disclaimer on every page**: "AetherPeptide connects you with licensed physicians through our partner network (Ola Digital Health). All medical decisions, prescriptions, and protocols are handled exclusively by licensed providers. Compounded peptides available only under valid prescription via 503A pharmacies. Not intended to diagnose, treat, cure, or prevent any disease."
+- **Mandatory disclaimer on every page**: "AetherPeptide connects you with licensed physicians through our partner network (licensed provider network (partner TBD)). All medical decisions, prescriptions, and protocols are handled exclusively by licensed providers. Compounded peptides available only under valid prescription via 503A pharmacies. Not intended to diagnose, treat, cure, or prevent any disease."
 - **Quiz is non-clinical** — Goals only (Recovery Support, Performance Optimization, Longevity Focus). No medical history, symptoms, or contraindication questions.
 
 ## Tech Stack
@@ -46,7 +46,7 @@ AetherPeptide is a **branded storefront and marketing machine** that connects cu
 | AI (non-clinical) | Marketing Creative Agent (compliant ad copy + visual prompts) |
 | Compliance | FDA claim filter (rule-based + AI classifier prompt) |
 | SEO | Dynamic sitemap, robots.ts, OG image generation |
-| Provider partner | Ola Digital Health (primary) |
+| Provider partner | licensed provider network (partner TBD) (primary) |
 
 ## Project Structure
 
@@ -84,7 +84,7 @@ npm run lint      # Run ESLint
 - **Live URL**: https://peptideforge-paay.vercel.app (pending domain: aetherpeptide.com)
 - **Routes**: 18 (11 static, 6 SSG peptide pages, 1 dynamic API)
 - **Phases complete**: Phase 1 (marketing site + quiz + creative agent)
-- **Next**: Stripe checkout, Ola provider integration, patient dashboard (order tracking)
+- **Next**: Stripe checkout, provider partner integration, patient dashboard (order tracking)
 
 ## Repository
 
