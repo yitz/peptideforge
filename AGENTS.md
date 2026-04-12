@@ -10,7 +10,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Core Identity
 
-AetherPeptide is a **premium branded telehealth storefront**. We are NOT a peptide manufacturer, NOT a pharmacy, and NOT a clinical AI tool. We own the customer experience (discovery, education, quiz, checkout, tracking). All medical work is done by licensed physicians through our partner network.
+AetherPeptide is a **premium branded telehealth storefront**. We are NOT a peptide manufacturer, NOT a pharmacy, and NOT a clinical AI tool. We own the customer experience (discovery, education, quiz, checkout, tracking). All medical work is done by licensed physicians through our partner provider network.
 
 ## Non-Negotiable Rules
 
@@ -50,9 +50,18 @@ NEVER ALLOWED:
 
 This exact disclaimer (or close variant) MUST appear on every major page (hero, catalog, quiz, footer, start page):
 
-> AetherPeptide connects you with licensed physicians through our partner network (our licensed provider network (partner TBD)). All medical decisions, prescriptions, and protocols are handled exclusively by licensed providers. Compounded peptides available only under valid prescription via 503A pharmacies. Not intended to diagnose, treat, cure, or prevent any disease.
+> AetherPeptide connects you with licensed physicians through our partner network. All medical decisions, prescriptions, and protocols are handled exclusively by licensed providers. Compounded peptides available only under valid prescription via 503A pharmacies. Not intended to diagnose, treat, cure, or prevent any disease.
 
-### 4. Quiz Rules
+### 4. Provider Partner References
+
+**Do NOT reference any specific partner company name in the codebase or marketing copy.** The provider partner is not yet finalized. Always use generic language:
+- "licensed physicians through our partner provider network"
+- "our partner network"
+- "our independent partner provider network"
+
+When the partner is finalized, a single search-and-replace will update the disclaimer template. Until then, zero company names.
+
+### 5. Quiz Rules
 
 The quiz is strictly non-clinical. Goals only:
 - Recovery Support
@@ -66,12 +75,54 @@ The quiz is strictly non-clinical. Goals only:
 
 NO medical history, NO symptoms, NO age/sex for clinical purposes, NO lab questions, NO contraindication screening. The quiz is educational matching — not a medical assessment. Results must clearly state this.
 
-### 5. Provider Handoff
+### 6. Provider Handoff
 
 After quiz or checkout, the flow hands off to licensed providers:
-- "Your journey continues with physician review and personalized care via our licensed provider network (our licensed provider network (partner TBD))"
+- "Your journey continues with physician review and personalized care via our partner provider network"
 - Make it clear that a real doctor handles intake, evaluation, prescribing, and fulfillment
 - Never imply AetherPeptide makes medical decisions
+
+## Design System — "The Restorative Lab"
+
+The site uses the **Restorative Lab** design system (see DESIGN.md for full specification). Key rules:
+
+### Visual Philosophy
+- **Creative North Star:** "The Restorative Lab" — a private, high-end longevity clinic aesthetic
+- **No-Line Rule:** Borders are prohibited for sectioning. Use background color shifts or tonal transitions only
+- **Tonal Layering:** Depth via stacked surfaces, not shadows. Place lighter cards on slightly darker backgrounds
+- **Intentional Asymmetry:** Headlines offset from body copy, overlapping imagery, editorial feel
+- **Generous Whitespace:** Whitespace is a "premium ingredient" — if a screen feels full, double the whitespace
+
+### Typography
+- **Headlines:** Noto Serif — medical authority, serif warmth, editorial look. CSS: `font-headline` class or `font-[family-name:var(--font-noto-serif)]`
+- **Body:** Inter — clarity and readability. Default sans via `--font-inter`
+- **Labels/Micro-copy:** Space Grotesk — geometric biohacking aesthetic. CSS: `font-label` class or `font-[family-name:var(--font-space-grotesk)]`
+- **Mono:** Geist Mono via `--font-geist-mono`
+
+### Effects & Surfaces
+- **Glassmorphism:** Use `.glass-card`, `.glass-primary`, `.glass-nav` utility classes
+- **Mesh Gradient:** `.mesh-gradient` for quiz and special pages
+- **Metallic Shimmer:** `.metallic-shimmer` for progress bars
+- **Premium Shadow:** `.premium-shadow` for floating cards
+- **Glass Badge:** `.glass-badge` for category labels on images
+
+### Theme
+- **Default theme: light** — next-themes `defaultTheme="light"` with `enableSystem`
+- **Dark mode:** Fully supported. All design system utility classes have `.dark` variants
+- Light mode: Clean clinical trust — warm neutral base (`#fcfaf8`), soft teal primary
+- Dark mode: Biohacker intensity — deep blue-black, bright teal accents
+
+### Colors
+- **Primary:** `#0D9488` (light) / oklch(0.7 0.17 190) (dark)
+- **On-surface:** `#0b1c30` — never use pure black (#000000) for text
+- **Surfaces:** Warm neutrals (`#fcfaf8`, `#faf9f6`, `#f4f7f6`)
+- Always reference CSS variables (`var(--color-primary)`) in code, not hardcoded hex
+
+### Components
+- **Buttons:** Gradient fill primary (`glass-primary`), full roundedness, uppercase label font
+- **Cards:** No divider lines. Use whitespace or background shifts to separate items
+- **Inputs:** Minimalist. `surface-container-low` background, no full borders
+- **Icons:** Material Symbols Outlined (loaded via Google Fonts stylesheet)
 
 ## Technical Rules
 
@@ -79,16 +130,19 @@ After quiz or checkout, the flow hands off to licensed providers:
 - Next.js 16 (App Router, TypeScript)
 - Tailwind CSS v4 + shadcn/ui (Base UI, NOT Radix)
 - shadcn Button uses `render` prop, NOT `asChild` (Base UI pattern)
-- next-themes for dark/light mode (default: system)
-- Inter (body) + Space Grotesk (headings) + Geist Mono (mono)
+- next-themes for dark/light mode (default: **light**)
+- Inter (body) + Space Grotesk (labels) + Noto Serif (headlines) + Geist Mono (mono)
+- Material Symbols Outlined for icons on marketing pages
 
 ### Key Patterns
 - Brand color references use CSS variables (--color-primary), not hardcoded hex
-- Heading font: `font-[family-name:var(--font-space-grotesk)]`
+- Headline font: `font-headline` class (maps to Noto Serif via `--font-headline`)
+- Label font: `font-label` class (maps to Space Grotesk via `--font-heading`)
 - All pages in `(marketing)` route group share header/footer layout
 - Peptide registry at `src/lib/peptides/registry.ts` — type-safe, filterable
 - Creative agent at `src/lib/ai/creative-agent.ts` + `src/app/api/creative/route.ts`
 - Compliance filter at `src/lib/ai/compliance-filter.ts`
+- Design system utilities in `src/app/globals.css` (glass-card, mesh-gradient, etc.)
 
 ### Git Push Pattern
 This machine has a broken Boxen credential helper. Use this pattern to push:
@@ -104,14 +158,17 @@ Ruby errors in output are cosmetic — push succeeds.
 | Name | AetherPeptide |
 | Domain | aetherpeptide.com |
 | Primary color | Teal — oklch(0.52 0.14 180) light / oklch(0.7 0.17 190) dark |
-| Provider partner | Licensed provider network (partner TBD) |
+| Provider partner | Generic — "partner provider network" (not yet finalized) |
 | Positioning | Premium physician-supervised peptide therapy |
+| Design system | Restorative Lab (DESIGN.md) |
+| Default theme | Light |
 
 ## What To Do When Starting Work
 
 1. Read this file (AGENTS.md) completely
 2. Read README.md for current status and project structure
-3. Run `git log --oneline -5` to see recent changes
-4. Run `npm run build` to verify the project compiles before making changes
-5. After changes, always run `npm run build` before committing
-6. Start your first response with: "Understood — working from latest AGENTS.md and README.md"
+3. Read DESIGN.md for the full Restorative Lab design specification
+4. Run `git log --oneline -5` to see recent changes
+5. Run `npm run build` to verify the project compiles before making changes
+6. After changes, always run `npm run build` before committing
+7. Start your first response with: "Understood — working from latest AGENTS.md and README.md"

@@ -4,7 +4,7 @@ Premium physician-supervised peptide therapy platform. A branded telehealth stor
 
 ## What This Is
 
-AetherPeptide is a **branded storefront and marketing machine** that connects customers with licensed physicians through our partner network (licensed provider network (partner TBD) as primary provider). We own the customer experience: discovery, education, quiz, checkout, order tracking. All medical decisions — intake, evaluation, prescribing, protocol design, lab interpretation — are handled exclusively by licensed providers.
+AetherPeptide is a **branded storefront and marketing machine** that connects customers with licensed physicians through our partner provider network. We own the customer experience: discovery, education, quiz, checkout, order tracking. All medical decisions — intake, evaluation, prescribing, protocol design, lab interpretation — are handled exclusively by licensed providers.
 
 ## What This Is NOT
 
@@ -20,19 +20,36 @@ AetherPeptide is a **branded storefront and marketing machine** that connects cu
 | **Domain** | aetherpeptide.com |
 | **Positioning** | Premium physician-supervised peptide therapy |
 | **Primary color** | Teal `#0d9488` / oklch(0.52 0.14 180) |
-| **Heading font** | Space Grotesk |
+| **Headline font** | Noto Serif (editorial authority) |
+| **Label font** | Space Grotesk (biohacking precision) |
 | **Body font** | Inter |
 | **Mono font** | Geist Mono |
+| **Icons** | Material Symbols Outlined |
+| **Default theme** | Light (dark mode supported) |
+| **Design system** | "Restorative Lab" — see DESIGN.md |
 | **Tone** | Confident, scientific yet approachable, premium wellness |
 | **Dark mode** | Biohacker intensity — deep blue-black, bright teal accents |
-| **Light mode** | Clean clinical trust — white/cream base, soft teal primary |
+| **Light mode** | Clean clinical trust — warm neutral base, soft teal primary |
+
+## Design System — "The Restorative Lab"
+
+See **DESIGN.md** for the complete specification. Key principles:
+
+- **No-Line Rule:** Borders are prohibited for sectioning. Use tonal shifts only.
+- **Tonal Layering:** Depth via stacked surfaces, not shadows.
+- **Glassmorphism:** `.glass-card`, `.glass-primary`, `.glass-nav` for floating elements.
+- **Typography Pairing:** Noto Serif headlines + Space Grotesk labels = "premium clinic" aesthetic.
+- **Generous Whitespace:** If a screen feels full, double the whitespace.
+- **Intentional Asymmetry:** Editorial feel, not rigid template grids.
+- **On-surface color:** `#0b1c30` — never pure black `#000000`.
 
 ## Compliance — Non-Negotiable
 
 - **Structure-function claims ONLY** — "Supports tissue repair and recovery" is OK. "Treats arthritis" is NOT.
 - **Never imply AI makes medical decisions** — Providers make all medical decisions. AI is used only for marketing creative, site building, and non-clinical support.
-- **Mandatory disclaimer on every page**: "AetherPeptide connects you with licensed physicians through our partner network (licensed provider network (partner TBD)). All medical decisions, prescriptions, and protocols are handled exclusively by licensed providers. Compounded peptides available only under valid prescription via 503A pharmacies. Not intended to diagnose, treat, cure, or prevent any disease."
-- **Quiz is non-clinical** — Goals only (Recovery Support, Performance Optimization, Longevity Focus). No medical history, symptoms, or contraindication questions.
+- **Mandatory disclaimer on every page**: "AetherPeptide connects you with licensed physicians through our partner network. All medical decisions, prescriptions, and protocols are handled exclusively by licensed providers. Compounded peptides available only under valid prescription via 503A pharmacies. Not intended to diagnose, treat, cure, or prevent any disease."
+- **Quiz is non-clinical** — Goals only (Recovery Support, Performance, Longevity Focus). No medical history, symptoms, or contraindication questions.
+- **No specific partner names** — Provider partner not yet finalized. Use "partner provider network" only.
 
 ## Tech Stack
 
@@ -40,13 +57,14 @@ AetherPeptide is a **branded storefront and marketing machine** that connects cu
 |-------|-----------|
 | Framework | Next.js 16 (App Router, TypeScript) |
 | Styling | Tailwind CSS v4 + shadcn/ui (Base UI) |
-| Theming | next-themes (dark/light/system) |
+| Theming | next-themes (default: **light**, dark supported) |
+| Icons | Material Symbols Outlined (Google Fonts) |
 | Observability | @vercel/analytics + @vercel/speed-insights |
 | Hosting | Vercel (production) |
 | AI (non-clinical) | Marketing Creative Agent (compliant ad copy + visual prompts) |
 | Compliance | FDA claim filter (rule-based + AI classifier prompt) |
 | SEO | Dynamic sitemap, robots.ts, OG image generation |
-| Provider partner | licensed provider network (partner TBD) (primary) |
+| Provider partner | TBD (generic "partner provider network") |
 
 ## Project Structure
 
@@ -55,20 +73,38 @@ src/
 ├── app/
 │   ├── (marketing)/          # Marketing site routes (landing, peptides, quiz, pricing, start)
 │   ├── api/creative/         # Marketing Creative Agent API
-│   ├── layout.tsx            # Root layout with Analytics + SpeedInsights
+│   ├── layout.tsx            # Root layout with Analytics + SpeedInsights + Material Symbols
+│   ├── globals.css           # Tailwind + Restorative Lab design system utilities
 │   ├── sitemap.ts            # Dynamic sitemap
 │   ├── robots.ts             # Robots directives
 │   └── opengraph-image.tsx   # Dynamic OG image
 ├── components/
-│   ├── layout/               # Header, footer, theme toggle/provider
-│   ├── marketing/            # Hero, how-it-works, trust, CTA sections
+│   ├── layout/               # Header (glass-nav), footer, theme toggle/provider
+│   ├── marketing/            # Hero, trust, goals (bento), CTA sections
 │   ├── quiz/                 # Goal matcher quiz + results
 │   └── ui/                   # shadcn/ui components
 └── lib/
     ├── ai/                   # Creative agent + compliance filter
-    ├── fonts.ts              # Inter + Space Grotesk + Geist Mono
+    ├── analytics.ts          # GA4 + Meta Pixel unified tracking
+    ├── fonts.ts              # Inter + Space Grotesk + Noto Serif + Geist Mono
     └── peptides/             # Dynamic peptide registry
 ```
+
+## Design System Utilities (globals.css)
+
+| Class | Purpose |
+|-------|---------|
+| `.glass-card` | Frosted glass card (backdrop-blur, semi-transparent) |
+| `.glass-primary` | Teal glass effect for primary CTAs |
+| `.glass-nav` | Glassmorphism navigation bar |
+| `.glass-badge` | Glass effect for category labels on images |
+| `.mesh-gradient` | Animated multi-color background (quiz page) |
+| `.metallic-shimmer` | Animated shimmer for progress bars |
+| `.premium-shadow` | Teal-tinted ambient shadow for cards |
+| `.card-active-glow` | Active state glow for quiz selection cards |
+| `.no-scrollbar` | Hide scrollbar (filter chip rows) |
+| `.font-headline` | Noto Serif (headlines) |
+| `.font-label` | Space Grotesk (labels, micro-copy) |
 
 ## Commands
 
@@ -83,7 +119,8 @@ npm run lint      # Run ESLint
 
 - **Live URL**: https://peptideforge-paay.vercel.app (pending domain: aetherpeptide.com)
 - **Routes**: 18 (11 static, 6 SSG peptide pages, 1 dynamic API)
-- **Phases complete**: Phase 1 (marketing site + quiz + creative agent)
+- **Design**: Restorative Lab (DESIGN.md) — fully integrated and deployed
+- **Phases complete**: Phase 1 (marketing site + quiz + creative agent + Restorative Lab design)
 - **Next**: Stripe checkout, provider partner integration, patient dashboard (order tracking)
 
 ## Repository
