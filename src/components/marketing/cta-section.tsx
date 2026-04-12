@@ -1,45 +1,31 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { TrackedCTA } from "@/components/ui/tracked-cta";
 
 export function CTASection() {
   return (
-    <section className="py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-secondary shadow-sm dark:bg-card dark:shadow-none">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_60%_at_50%_120%,var(--color-primary)/8,transparent)] dark:bg-[radial-gradient(ellipse_80%_60%_at_50%_120%,var(--color-primary)/10,transparent)]" />
-          <div className="px-6 py-16 text-center sm:px-12 sm:py-20">
-            <h2 className="font-[family-name:var(--font-space-grotesk)] text-3xl font-bold tracking-tight sm:text-4xl">
-              Ready to Start Your Peptide Journey?
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
-              Take our 30-second quiz to explore which peptides match your
-              wellness goals. Then connect with a licensed provider.
-            </p>
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <TrackedCTA section="cta_banner" label="Take the Quiz" destination="/quiz">
-                <Button size="lg" className="gap-2 text-base" render={<Link href="/quiz" />}>
-                  Take the Quiz
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </TrackedCTA>
-              <TrackedCTA section="cta_banner" label="Talk to a Provider" destination="/start" journey>
-                <Button variant="outline" size="lg" className="text-base" render={<Link href="/start" />}>
-                  Talk to a Provider
-                </Button>
-              </TrackedCTA>
-            </div>
-            <p className="mx-auto mt-6 max-w-lg text-xs text-muted-foreground">
-              AetherPeptide connects you with licensed physicians through our
-              partner network (partner provider TBD). All medical decisions and
-              prescriptions are made exclusively by licensed providers. Compounded
-              peptides available only under valid prescription. These statements
-              have not been evaluated by the FDA. Not intended to diagnose, treat,
-              cure, or prevent any disease.
-            </p>
-          </div>
-        </div>
+    <section className="bg-[var(--ds-surface-container)] px-8 py-32 dark:bg-card/30">
+      <div className="glass-card space-y-8 rounded-[3.5rem] border border-white/40 bg-card/60 p-12 text-center shadow-2xl shadow-primary/5 dark:border-border/20 dark:bg-card/40">
+        <h2 className="font-headline text-4xl font-bold leading-tight tracking-tight text-foreground">
+          Ready to explore <br />physician-supervised peptide therapy?
+        </h2>
+        <p className="mx-auto max-w-sm text-sm leading-relaxed text-muted-foreground">
+          Take our wellness quiz to share your goals. A licensed physician
+          through our partner network will review your profile and guide your
+          next steps.
+        </p>
+        <TrackedCTA section="cta_banner" label="Start My Wellness Quiz" destination="/quiz">
+          <Link
+            href="/quiz"
+            className="inline-block w-full rounded-full bg-primary py-6 font-label text-[10px] font-bold uppercase tracking-[0.3em] text-primary-foreground shadow-2xl shadow-primary/20 transition-all hover:bg-primary/90"
+          >
+            Start My Wellness Quiz
+          </Link>
+        </TrackedCTA>
+        <p className="mx-auto max-w-md font-label text-[9px] uppercase leading-loose tracking-widest text-muted-foreground/50">
+          AetherPeptide connects you with licensed physicians through our partner
+          network (Ola Digital Health). All medical decisions, prescriptions, and
+          protocols are handled exclusively by licensed providers.
+        </p>
       </div>
     </section>
   );

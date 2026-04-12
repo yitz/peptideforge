@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Menu, X, FlaskConical, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
@@ -10,7 +10,6 @@ import { ThemeToggle } from "@/components/layout/theme-toggle";
 const NAV_ITEMS = [
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Peptides", href: "/peptides" },
-  { label: "Science", href: "/science" },
   { label: "Pricing", href: "/pricing" },
 ] as const;
 
@@ -18,15 +17,16 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/90 shadow-sm backdrop-blur-xl dark:border-border/50 dark:bg-background/80 dark:shadow-none">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="glass-nav fixed top-0 z-50 w-full">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <Link href="/" className="flex items-center gap-2">
-          <FlaskConical className="h-7 w-7 text-primary" />
-          <span className="font-[family-name:var(--font-space-grotesk)] text-xl font-bold tracking-tight">
+          <span className="material-symbols-outlined text-primary text-2xl">spa</span>
+          <span className="font-headline text-xl font-bold tracking-tight text-foreground">
             AetherPeptide
           </span>
         </Link>
 
+        {/* Desktop nav */}
         <nav className="hidden items-center gap-1 md:flex">
           {NAV_ITEMS.map((item) => (
             <Link
@@ -41,14 +41,16 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
-          <Button variant="outline" size="sm" render={<Link href="/quiz" />}>
-            Take the Quiz
-          </Button>
-          <Button size="sm" render={<Link href="/start" />}>
-            Get Started
+          <Button
+            size="sm"
+            className="glass-primary rounded-full border-0 px-6 py-2 font-label text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-primary/10"
+            render={<Link href="/quiz" />}
+          >
+            Start Quiz
           </Button>
         </div>
 
+        {/* Mobile */}
         <div className="flex items-center gap-2 md:hidden">
           <ThemeToggle />
           <Sheet open={open} onOpenChange={setOpen}>
@@ -59,10 +61,8 @@ export function SiteHeader() {
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <div className="flex flex-col gap-6 pt-6">
                 <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-                  <FlaskConical className="h-6 w-6 text-primary" />
-                  <span className="font-[family-name:var(--font-space-grotesk)] text-lg font-bold">
-                    AetherPeptide
-                  </span>
+                  <span className="material-symbols-outlined text-primary">spa</span>
+                  <span className="font-headline text-lg font-bold">AetherPeptide</span>
                 </Link>
                 <nav className="flex flex-col gap-1">
                   {NAV_ITEMS.map((item) => (
@@ -77,11 +77,8 @@ export function SiteHeader() {
                   ))}
                 </nav>
                 <div className="flex flex-col gap-2 border-t border-border pt-4">
-                  <Button variant="outline" render={<Link href="/quiz" onClick={() => setOpen(false)} />}>
-                    Take the Quiz
-                  </Button>
-                  <Button render={<Link href="/start" onClick={() => setOpen(false)} />}>
-                    Get Started
+                  <Button render={<Link href="/quiz" onClick={() => setOpen(false)} />}>
+                    Start Quiz
                   </Button>
                 </div>
               </div>

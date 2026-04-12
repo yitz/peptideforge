@@ -1,11 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, FlaskConical, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import type { QuizAnswers, QuizGoal } from "@/components/quiz/quiz-flow";
 import { getPeptidesByGoal, type CompoundablePeptide } from "@/lib/peptides/registry";
 import { track } from "@/lib/analytics";
@@ -32,19 +28,25 @@ export function QuizResults({ answers }: { answers: QuizAnswers }) {
   return (
     <div>
       <div className="mb-8 text-center">
-        <h2 className="font-[family-name:var(--font-space-grotesk)] text-2xl font-bold sm:text-3xl">
+        <span className="font-label text-[10px] font-bold uppercase tracking-[0.2em] text-primary opacity-80">
+          Your Results
+        </span>
+        <h2 className="mt-3 font-headline text-2xl font-bold text-foreground sm:text-3xl">
           Peptides That Match Your Goals
         </h2>
-        <p className="mt-2 text-muted-foreground">
+        <p className="mt-2 text-sm text-muted-foreground">
           Based on: {answers.goals.map((g) => g.replace("-", " ")).join(", ")}
         </p>
       </div>
 
-      <Card className="mb-6 border-primary/30 bg-primary/5">
-        <CardContent className="flex items-start gap-3 p-5">
-          <Stethoscope className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+      {/* Educational disclaimer card */}
+      <div className="mb-6 rounded-2xl border border-primary/20 bg-primary/5 p-5 dark:border-primary/10 dark:bg-primary/5">
+        <div className="flex items-start gap-3">
+          <span className="material-symbols-outlined mt-0.5 shrink-0 text-xl text-primary">
+            stethoscope
+          </span>
           <div>
-            <p className="text-sm font-medium">
+            <p className="text-sm font-medium text-foreground">
               This is an educational match — not a medical recommendation
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
@@ -53,59 +55,60 @@ export function QuizResults({ answers }: { answers: QuizAnswers }) {
               prescribing decisions are made by your provider.
             </p>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
+      {/* Matched peptides */}
       <div className="space-y-4">
         {matched.map((peptide, idx) => (
           <Link
             key={peptide.id}
             href={`/peptides/${peptide.slug}`}
-            className="block"
+            className="group block"
             onClick={() => track.quizResultClick(peptide.name, idx + 1)}
           >
-            <Card className="transition-colors hover:border-primary/50">
-              <CardHeader className="pb-2">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
-                    <FlaskConical className="h-4 w-4 text-primary" />
-                  </div>
-                  <div>
-                    <CardTitle className="font-[family-name:var(--font-space-grotesk)] text-base">
-                      {peptide.name}
-                    </CardTitle>
-                    <p className="text-xs text-muted-foreground">
-                      {peptide.genericName}
-                    </p>
-                  </div>
+            <div className="rounded-2xl border border-border/40 bg-card/60 p-5 backdrop-blur-sm transition-all hover:border-primary/30 hover:shadow-md dark:border-border/20 dark:bg-card/40">
+              <div className="flex items-center gap-3">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10">
+                  <span className="material-symbols-outlined text-lg text-primary">
+                    science
+                  </span>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {peptide.shortDescription}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {peptide.structureFunctionClaims.slice(0, 2).map((claim) => (
-                    <Badge key={claim} variant="secondary" className="text-xs">
-                      {claim}
-                    </Badge>
-                  ))}
+                <div>
+                  <p className="font-headline text-base font-bold text-foreground">
+                    {peptide.name}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {peptide.genericName}
+                  </p>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+              <p className="mt-3 text-sm text-muted-foreground">
+                {peptide.shortDescription}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {peptide.structureFunctionClaims.slice(0, 2).map((claim) => (
+                  <span
+                    key={claim}
+                    className="rounded-full bg-primary/5 px-3 py-1 font-label text-[10px] text-primary dark:bg-primary/10"
+                  >
+                    {claim}
+                  </span>
+                ))}
+              </div>
+            </div>
           </Link>
         ))}
       </div>
 
-      <Separator className="my-8" />
-
-      <div className="space-y-4 text-center">
-        <h3 className="font-[family-name:var(--font-space-grotesk)] text-lg font-semibold">
+      {/* Next steps */}
+      <div className="mt-10 space-y-4 text-center">
+        <h3 className="font-headline text-lg font-semibold text-foreground">
           Your Next Step
         </h3>
         <p className="text-sm text-muted-foreground">
           When you subscribe, you&apos;ll be connected with a licensed physician
-          through our provider network (partner provider TBD). Your doctor will
+          through our provider network (Ola Digital Health). Your doctor will
           independently evaluate your health history and determine whether a
           peptide protocol is appropriate for you.
         </p>
@@ -120,7 +123,7 @@ export function QuizResults({ answers }: { answers: QuizAnswers }) {
             }}
           >
             Start Your Journey
-            <ArrowRight className="h-4 w-4" />
+            <span className="material-symbols-outlined text-base">arrow_forward</span>
           </Button>
           <Button
             variant="outline"
@@ -133,10 +136,10 @@ export function QuizResults({ answers }: { answers: QuizAnswers }) {
         </div>
       </div>
 
-      <p className="mt-8 text-center text-xs text-muted-foreground">
+      <p className="mt-8 text-center font-label text-[9px] uppercase leading-loose tracking-[0.1em] text-muted-foreground/50">
         This quiz provides educational information only and does not constitute
         medical advice. AetherPeptide connects you with licensed physicians through
-        our partner network (partner provider TBD). All medical decisions, prescriptions,
+        our partner network (Ola Digital Health). All medical decisions, prescriptions,
         and protocols are handled exclusively by licensed providers. Compounded
         peptides available only under valid prescription. Not intended to diagnose,
         treat, cure, or prevent any disease.

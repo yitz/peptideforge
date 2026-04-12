@@ -1,92 +1,56 @@
 import Link from "next/link";
-import { ArrowRight, Shield, Stethoscope, FlaskConical } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { TrackedCTA } from "@/components/ui/tracked-cta";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--color-primary)/10,transparent)] dark:bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,var(--color-primary)/15,transparent)]" />
+    <section className="relative flex min-h-[85vh] flex-col justify-center overflow-hidden px-8">
+      {/* Background image + gradient overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          className="h-full w-full scale-110 object-cover"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg5LI1aP_4E8rHvWl9ZJT_k6o86nt0hex29q3v2X0w3FFlD4jMUd_gqPhuCUfViYwbkr-ylgcw0-8f0IR3Wd0kzQ75cx8sZyktC-wAY3a20KbkziYJ8zmhTCQLhpUZOfxgkjvz5yDjw97RlL7JTHiHW_qcAKkruscHMT0Fu6KJqt7YbS60cKUISOoHQB1jCR_TdbYAbKJ1HxpI8pHOufjs9CH9bNrrE1mMRrdKtOgpljgiLYG34Z97capOzWuVVAdWu1j-nahwZSSr"
+          alt="Abstract crystalline structures in deep teal"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/60 to-background" />
+      </div>
 
-      <div className="mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 sm:pb-28 sm:pt-24 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <Badge variant="secondary" className="mb-6 gap-1.5 px-3 py-1">
-            <Shield className="h-3.5 w-3.5" />
-            Physician-Supervised &middot; 503A Pharmacy
-          </Badge>
+      <div className="relative z-10 mt-12 max-w-lg space-y-8">
+        <span className="font-label text-xs font-bold uppercase tracking-[0.3em] text-primary">
+          Premium Physician-Supervised Wellness
+        </span>
 
-          <h1 className="font-[family-name:var(--font-space-grotesk)] text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Peptide Therapy.{" "}
-            <span className="text-primary">Refined.</span>
-          </h1>
+        <h1 className="font-headline text-6xl font-extrabold leading-[1.05] tracking-tight text-foreground">
+          Peptide Therapy.{" "}
+          <span className="font-normal italic text-primary">Refined.</span>
+        </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-            AetherPeptide is the premium way to access physician-supervised
-            peptide therapy &mdash; a seamless branded experience backed by
-            independent licensed providers and 503A compounding pharmacies.
-          </p>
+        <p className="text-xl font-light leading-relaxed text-muted-foreground">
+          AetherPeptide connects you with licensed physicians who may design
+          personalized wellness protocols through our partner provider network.
+        </p>
 
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <TrackedCTA section="hero" label="Find Your Protocol" destination="/quiz">
-              <Button size="lg" className="gap-2 text-base" render={<Link href="/quiz" />}>
-                Find Your Protocol
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </TrackedCTA>
-            <TrackedCTA section="hero" label="Explore Peptides" destination="/peptides">
-              <Button variant="outline" size="lg" className="text-base" render={<Link href="/peptides" />}>
-                Explore Peptides
-              </Button>
-            </TrackedCTA>
-          </div>
-
-          <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-3">
-            <MetricCard
-              icon={<Stethoscope className="h-5 w-5 text-primary" />}
-              metric="100%"
-              label="Physician-supervised"
-            />
-            <MetricCard
-              icon={<FlaskConical className="h-5 w-5 text-primary" />}
-              metric="503A"
-              label="Licensed pharmacies"
-            />
-            <MetricCard
-              icon={<Shield className="h-5 w-5 text-primary" />}
-              metric="HIPAA"
-              label="Compliant platform"
-            />
-          </div>
-
-          <p className="mt-8 text-xs text-muted-foreground">
-            AetherPeptide connects you with licensed physicians through our
-            partner network (partner provider TBD). All medical decisions and
-            prescriptions are made exclusively by your doctor. Not intended to
-            diagnose, treat, cure, or prevent any disease.
-          </p>
+        <div className="pt-6">
+          <TrackedCTA section="hero" label="Start My Wellness Quiz" destination="/quiz">
+            <Link
+              href="/quiz"
+              className="glass-primary group flex w-full items-center justify-center gap-4 rounded-full py-6 font-label text-xs font-bold uppercase tracking-[0.25em] text-white shadow-2xl shadow-primary/30 transition-all active:scale-95"
+            >
+              Start My Wellness Quiz
+              <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
+                arrow_forward
+              </span>
+            </Link>
+          </TrackedCTA>
         </div>
+
+        <p className="mt-16 max-w-[80%] font-label text-[9px] uppercase leading-loose tracking-widest text-muted-foreground/50">
+          AetherPeptide connects you with licensed physicians through our partner
+          network (Ola Digital Health). All medical decisions, prescriptions, and
+          protocols are handled exclusively by licensed providers. Compounded
+          peptides available only under valid prescription via 503A pharmacies.
+          Not intended to diagnose, treat, cure, or prevent any disease.
+        </p>
       </div>
     </section>
-  );
-}
-
-function MetricCard({
-  icon,
-  metric,
-  label,
-}: {
-  icon: React.ReactNode;
-  metric: string;
-  label: string;
-}) {
-  return (
-    <div className="flex items-center gap-3 rounded-xl border border-border/60 bg-card px-5 py-4 shadow-sm dark:border-border/50 dark:bg-card/50 dark:shadow-none dark:backdrop-blur-sm">
-      {icon}
-      <div>
-        <p className="font-[family-name:var(--font-space-grotesk)] text-lg font-bold">{metric}</p>
-        <p className="text-sm text-muted-foreground">{label}</p>
-      </div>
-    </div>
   );
 }

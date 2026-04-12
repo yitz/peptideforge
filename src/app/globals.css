@@ -10,6 +10,7 @@
   --font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
   --font-heading: "Space Grotesk", "Space Grotesk Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Noto Serif", "Noto Serif Fallback", ui-serif, Georgia, serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -128,4 +129,136 @@
   html {
     @apply font-sans;
   }
+}
+
+/* ═══ DESIGN.md "Restorative Lab" Design System ═══ */
+
+/* Surface Hierarchy (DESIGN.md Section 2) */
+:root {
+  --ds-surface: #fcfaf8;
+  --ds-surface-low: #faf9f6;
+  --ds-surface-container: #f4f7f6;
+  --ds-surface-high: #dce9ff;
+  --ds-surface-lowest: #ffffff;
+  --ds-on-surface: #0b1c30;
+  --ds-on-surface-variant: #3d4947;
+  --ds-outline: #6d7a77;
+  --ds-outline-variant: #bcc9c6;
+  --ds-secondary: #545f73;
+  --ds-ds-primary: #0D9488;
+  --ds-primary-container: #008378;
+  --ds-inverse-surface: #213145;
+}
+
+.dark {
+  --ds-surface: #0f1520;
+  --ds-surface-low: #151c28;
+  --ds-surface-container: #1a2332;
+  --ds-surface-high: #243044;
+  --ds-surface-lowest: #0c1018;
+  --ds-on-surface: #e8ecf0;
+  --ds-on-surface-variant: #96a0ac;
+  --ds-outline: #6d7a77;
+  --ds-outline-variant: #3d4947;
+  --ds-secondary: #96a0ac;
+}
+
+/* Glassmorphism (DESIGN.md Section 2) */
+.glass-card {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.dark .glass-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-primary {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(13, 148, 136, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-nav {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.dark .glass-nav {
+  background: rgba(15, 21, 32, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Mesh gradient background (quiz page) */
+.mesh-gradient {
+  background: linear-gradient(-45deg, #f8f9ff, #eef9f7, #f4f7ff, #ffffff);
+  background-size: 400% 400%;
+  animation: gradient-x 15s ease infinite;
+}
+.dark .mesh-gradient {
+  background: linear-gradient(-45deg, #0f1520, #0d1a1a, #111827, #0f1520);
+  background-size: 400% 400%;
+  animation: gradient-x 15s ease infinite;
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Metallic shimmer for progress bars */
+.metallic-shimmer {
+  background: linear-gradient(90deg, #006a61 0%, #00a89b 50%, #006a61 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+.dark .metallic-shimmer {
+  background: linear-gradient(90deg, #0d9488 0%, #2dd4bf 50%, #0d9488 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0%; }
+  100% { background-position: -100% 0%; }
+}
+
+/* Premium shadow (DESIGN.md Section 4) */
+.premium-shadow {
+  box-shadow: 0 20px 40px -15px rgba(13, 148, 136, 0.08);
+}
+.dark .premium-shadow {
+  box-shadow: 0 20px 40px -15px rgba(45, 212, 191, 0.06);
+}
+
+/* Glass badge for catalog cards */
+.glass-badge {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+.dark .glass-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Quiz card active glow */
+.card-active-glow {
+  box-shadow: inset 0 0 0 2px var(--color-primary), 0 10px 25px -5px rgba(13, 148, 136, 0.1);
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Font utility for DESIGN.md headline (Noto Serif) */
+.font-headline {
+  font-family: var(--font-headline);
+}
+.font-label {
+  font-family: var(--font-heading);
 }
