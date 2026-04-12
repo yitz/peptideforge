@@ -23,7 +23,7 @@ export function CTASection() {
         </TrackedCTA>
         <p className="mx-auto max-w-md font-label text-[9px] uppercase leading-loose tracking-widest text-muted-foreground/50">
           AetherPeptide connects you with licensed physicians through our partner
-          network (Ola Digital Health). All medical decisions, prescriptions, and
+          network. All medical decisions, prescriptions, and
           protocols are handled exclusively by licensed providers.
         </p>
       </div>

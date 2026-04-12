@@ -159,7 +159,7 @@ export function QuizFlow() {
       <div className="mt-6 text-center">
         <p className="mx-auto max-w-sm font-label text-[9px] uppercase leading-loose tracking-[0.1em] text-muted-foreground/50">
           AetherPeptide connects you with licensed physicians through our partner
-          network (Ola Digital Health). All medical decisions, prescriptions, and
+          network. All medical decisions, prescriptions, and
           protocols are handled exclusively by licensed providers. Not intended to
           diagnose, treat, cure, or prevent any disease.
         </p>

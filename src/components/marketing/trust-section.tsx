@@ -13,7 +13,7 @@ export function TrustSection() {
           <TrustCard
             icon="medical_services"
             title="Licensed Physicians"
-            description="All medical decisions are made exclusively by licensed physicians through our independent partner provider network (Ola Digital Health)."
+            description="All medical decisions are made exclusively by licensed physicians through our independent partner provider network."
           />
           <TrustCard
             icon="biotech"

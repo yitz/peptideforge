@@ -140,7 +140,7 @@ export default function PeptideCatalogPage() {
         <div className="mt-16 text-center">
           <p className="mx-auto max-w-lg font-label text-[9px] uppercase leading-loose tracking-[0.1em] text-muted-foreground/50">
             AetherPeptide connects you with licensed physicians through our
-            partner network (Ola Digital Health). All medical decisions,
+            partner network. All medical decisions,
             prescriptions, and protocols are handled exclusively by licensed
             providers. Compounded peptides available only under valid prescription
             via 503A pharmacies. These statements have not been evaluated by the

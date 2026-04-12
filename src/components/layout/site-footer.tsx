@@ -48,7 +48,7 @@ export function SiteFooter() {
           <p className="text-[9px] font-body uppercase leading-loose tracking-[0.1em] text-muted-foreground/60">
             &copy; {new Date().getFullYear()} AetherPeptide. All rights reserved.
             AetherPeptide connects you with licensed physicians through our partner
-            network (Ola Digital Health). All medical decisions, prescriptions, and
+            network. All medical decisions, prescriptions, and
             protocols are handled exclusively by licensed providers. Compounded
             peptides available only under valid prescription via 503A pharmacies.
             These statements have not been evaluated by the Food and Drug

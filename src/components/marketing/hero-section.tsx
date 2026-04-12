@@ -45,7 +45,7 @@ export function HeroSection() {
 
         <p className="mt-16 max-w-[80%] font-label text-[9px] uppercase leading-loose tracking-widest text-muted-foreground/50">
           AetherPeptide connects you with licensed physicians through our partner
-          network (Ola Digital Health). All medical decisions, prescriptions, and
+          network. All medical decisions, prescriptions, and
           protocols are handled exclusively by licensed providers. Compounded
           peptides available only under valid prescription via 503A pharmacies.
           Not intended to diagnose, treat, cure, or prevent any disease.

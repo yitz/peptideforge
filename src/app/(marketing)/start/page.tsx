@@ -75,7 +75,7 @@ export default function StartPage() {
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
                 AetherPeptide connects you with licensed physicians through
-                our partner network (Ola Digital Health).
+                our partner provider network.
                 Your physician handles intake, health evaluation, prescribing,
                 and ongoing protocol management. We never make medical
                 recommendations.
