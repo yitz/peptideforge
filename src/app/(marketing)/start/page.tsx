@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { TrackedCTA } from "@/components/ui/tracked-cta";
 
 export const metadata: Metadata = {
   title: "Start Your Journey",
@@ -136,13 +137,17 @@ export default function StartPage() {
         </Card>
 
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <Button size="lg" className="gap-2 text-base" render={<Link href="/pricing" />}>
-            Choose Your Plan
-            <ArrowRight className="h-4 w-4" />
-          </Button>
-          <Button variant="outline" size="lg" className="text-base" render={<Link href="/quiz" />}>
-            Take the Quiz First
-          </Button>
+          <TrackedCTA section="start_page" label="Choose Your Plan" destination="/pricing" journey>
+            <Button size="lg" className="gap-2 text-base" render={<Link href="/pricing" />}>
+              Choose Your Plan
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </TrackedCTA>
+          <TrackedCTA section="start_page" label="Take the Quiz First" destination="/quiz">
+            <Button variant="outline" size="lg" className="text-base" render={<Link href="/quiz" />}>
+              Take the Quiz First
+            </Button>
+          </TrackedCTA>
         </div>
 
         <p className="mt-8 text-center text-xs text-muted-foreground">

@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import type { QuizAnswers, QuizGoal } from "@/components/quiz/quiz-flow";
 import { getPeptidesByGoal, type CompoundablePeptide } from "@/lib/peptides/registry";
+import { track } from "@/lib/analytics";
 
 function matchPeptides(answers: QuizAnswers): CompoundablePeptide[] {
   const seen = new Set<string>();
@@ -56,8 +57,13 @@ export function QuizResults({ answers }: { answers: QuizAnswers }) {
       </Card>
 
       <div className="space-y-4">
-        {matched.map((peptide) => (
-          <Link key={peptide.id} href={`/peptides/${peptide.slug}`} className="block">
+        {matched.map((peptide, idx) => (
+          <Link
+            key={peptide.id}
+            href={`/peptides/${peptide.slug}`}
+            className="block"
+            onClick={() => track.quizResultClick(peptide.name, idx + 1)}
+          >
             <Card className="transition-colors hover:border-primary/50">
               <CardHeader className="pb-2">
                 <div className="flex items-center gap-3">
@@ -104,11 +110,24 @@ export function QuizResults({ answers }: { answers: QuizAnswers }) {
           peptide protocol is appropriate for you.
         </p>
         <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-          <Button size="lg" className="gap-2" render={<Link href="/start" />}>
+          <Button
+            size="lg"
+            className="gap-2"
+            render={<Link href="/start" />}
+            onClick={() => {
+              track.startJourney("quiz_results");
+              track.ctaClick("quiz_results", "Start Your Journey", "/start");
+            }}
+          >
             Start Your Journey
             <ArrowRight className="h-4 w-4" />
           </Button>
-          <Button variant="outline" size="lg" render={<Link href="/pricing" />}>
+          <Button
+            variant="outline"
+            size="lg"
+            render={<Link href="/pricing" />}
+            onClick={() => track.ctaClick("quiz_results", "View Pricing", "/pricing")}
+          >
             View Pricing
           </Button>
         </div>

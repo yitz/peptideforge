@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { AnalyticsScripts } from "@/components/layout/analytics-scripts";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { inter, spaceGrotesk, geistMono } from "@/lib/fonts";
@@ -56,6 +57,7 @@ export default function RootLayout({
         <ThemeProvider>
           <TooltipProvider>{children}</TooltipProvider>
         </ThemeProvider>
+        <AnalyticsScripts />
         <Analytics />
         <SpeedInsights />
       </body>

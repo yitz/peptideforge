@@ -4,6 +4,7 @@ import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { TrackedPlanCTA } from "@/components/marketing/tracked-plan-cta";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -113,14 +114,16 @@ export default function PricingPage() {
                     </li>
                   ))}
                 </ul>
-                <Button
-                  className="mt-8 w-full gap-2"
-                  variant={plan.badge === "Most Popular" ? "default" : "outline"}
-                  render={<Link href="/start" />}
-                >
-                  Get Started
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
+                <TrackedPlanCTA planName={plan.name} price={plan.price}>
+                  <Button
+                    className="mt-8 w-full gap-2"
+                    variant={plan.badge === "Most Popular" ? "default" : "outline"}
+                    render={<Link href="/start" />}
+                  >
+                    Get Started
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </TrackedPlanCTA>
               </CardContent>
             </Card>
           ))}

@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { QuizResults } from "@/components/quiz/quiz-results";
+import { track } from "@/lib/analytics";
 
 export type QuizGoal =
   | "recovery"
@@ -42,16 +43,29 @@ export function QuizFlow() {
   const [submitted, setSubmitted] = useState(false);
   const [answers, setAnswers] = useState<QuizAnswers>({ goals: [] });
 
+  useEffect(() => {
+    track.quizStart();
+  }, []);
+
   const toggleGoal = useCallback((goal: QuizGoal) => {
-    setAnswers((prev) => ({
-      ...prev,
-      goals: prev.goals.includes(goal)
+    setAnswers((prev) => {
+      const removing = prev.goals.includes(goal);
+      const next = removing
         ? prev.goals.filter((g) => g !== goal)
         : prev.goals.length < 3
           ? [...prev.goals, goal]
-          : prev.goals,
-    }));
+          : prev.goals;
+      if (!removing && next.length > prev.goals.length) {
+        track.goalSelect(goal, next.length);
+      }
+      return { ...prev, goals: next };
+    });
   }, []);
+
+  const handleSubmit = useCallback(() => {
+    track.quizComplete(answers.goals);
+    setSubmitted(true);
+  }, [answers.goals]);
 
   if (submitted) {
     return <QuizResults answers={answers} />;
@@ -107,7 +121,7 @@ export function QuizFlow() {
       <div className="mt-8 flex justify-center">
         <Button
           size="lg"
-          onClick={() => setSubmitted(true)}
+          onClick={handleSubmit}
           disabled={answers.goals.length === 0}
           className="gap-2"
         >

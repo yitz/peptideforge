@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TrackedCTA } from "@/components/ui/tracked-cta";
 
 export function CTASection() {
   return (
@@ -17,13 +18,17 @@ export function CTASection() {
               wellness goals. Then connect with a licensed provider.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Button size="lg" className="gap-2 text-base" render={<Link href="/quiz" />}>
-                Take the Quiz
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="lg" className="text-base" render={<Link href="/start" />}>
-                Talk to a Provider
-              </Button>
+              <TrackedCTA section="cta_banner" label="Take the Quiz" destination="/quiz">
+                <Button size="lg" className="gap-2 text-base" render={<Link href="/quiz" />}>
+                  Take the Quiz
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </TrackedCTA>
+              <TrackedCTA section="cta_banner" label="Talk to a Provider" destination="/start" journey>
+                <Button variant="outline" size="lg" className="text-base" render={<Link href="/start" />}>
+                  Talk to a Provider
+                </Button>
+              </TrackedCTA>
             </div>
             <p className="mx-auto mt-6 max-w-lg text-xs text-muted-foreground">
               AetherPeptide connects you with licensed physicians through our

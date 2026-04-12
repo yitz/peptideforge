@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Shield, Stethoscope, FlaskConical } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { TrackedCTA } from "@/components/ui/tracked-cta";
 
 export function HeroSection() {
   return (
@@ -27,13 +28,17 @@ export function HeroSection() {
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <Button size="lg" className="gap-2 text-base" render={<Link href="/quiz" />}>
-              Find Your Protocol
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-            <Button variant="outline" size="lg" className="text-base" render={<Link href="/peptides" />}>
-              Explore Peptides
-            </Button>
+            <TrackedCTA section="hero" label="Find Your Protocol" destination="/quiz">
+              <Button size="lg" className="gap-2 text-base" render={<Link href="/quiz" />}>
+                Find Your Protocol
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </TrackedCTA>
+            <TrackedCTA section="hero" label="Explore Peptides" destination="/peptides">
+              <Button variant="outline" size="lg" className="text-base" render={<Link href="/peptides" />}>
+                Explore Peptides
+              </Button>
+            </TrackedCTA>
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-3">
