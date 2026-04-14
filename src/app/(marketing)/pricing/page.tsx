@@ -5,7 +5,7 @@ import { TrackedPlanCTA } from "@/components/marketing/tracked-plan-cta";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Transparent pricing for physician-supervised peptide therapy. Monthly subscriptions include provider consultations, 503A pharmacy fulfillment, and order tracking.",
+    "Simple, transparent pricing for physician-supervised peptide therapy. Monthly subscriptions include provider consultations, 503A pharmacy fulfillment, and order tracking.",
 };
 
 const PLANS = [
