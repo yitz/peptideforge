@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Logo } from "@/components/layout/logo";
 
 export function SiteFooter() {
   return (
@@ -6,12 +7,9 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12">
         {/* Brand */}
         <div className="space-y-6">
-          <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-primary text-2xl">spa</span>
-            <span className="font-headline text-xl font-bold tracking-tight">
-              AetherPeptide
-            </span>
-          </div>
+          <Link href="/">
+            <Logo variant="horizontal" />
+          </Link>
           <p className="max-w-xs text-xs leading-relaxed text-muted-foreground">
             A premium telehealth platform connecting you with licensed physicians
             for physician-supervised peptide therapy.

@@ -1,15 +1,18 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "AetherPeptide — Premium Physician-Supervised Peptide Therapy";
+export const alt = "AetherPeptide — Peptide Therapy. Refined.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+const SPA_PATH =
+  "M480-80q-94-12-168-48t-125.5-94Q135-280 108-356.5T81-526q110 11 186 40t123.5 82Q438-351 459-271.5T480-80Zm0-337q-23-35-62.5-69T326-548q6-42 20-87t34-88.5q20-43.5 45.5-83.5t54.5-73q29 33 54.5 73t45.5 83.5q20 43.5 34 88.5t20 87q-52 27-91.5 61T480-417Zm80 321q-2-70-10.5-129.5T523-338q47-81 129.5-132T879-526q1 158-84.5 272.5T560-96Z";
 
 export default function Image() {
   return new ImageResponse(
     (
       <div
         style={{
-          background: "linear-gradient(135deg, #0f172a 0%, #134e4a 50%, #0f172a 100%)",
+          background: "linear-gradient(135deg, #0F1520 0%, #0D3D38 50%, #0F1520 100%)",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -19,59 +22,69 @@ export default function Image() {
           padding: 60,
         }}
       >
+        {/* Spa icon */}
+        <svg
+          viewBox="0 -960 960 960"
+          width="64"
+          height="64"
+          fill="#2DD4BF"
+          style={{ marginBottom: 24 }}
+        >
+          <path d={SPA_PATH} />
+        </svg>
+
+        {/* Wordmark */}
         <div
           style={{
             display: "flex",
-            alignItems: "center",
-            gap: 16,
-            marginBottom: 32,
+            alignItems: "baseline",
+            gap: 0,
+            marginBottom: 20,
           }}
         >
-          <div
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: 12,
-              background: "rgba(20, 184, 166, 0.2)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 32,
-            }}
-          >
-            🧬
-          </div>
           <span
             style={{
-              fontSize: 48,
+              fontSize: 56,
               fontWeight: 700,
-              color: "#f0fdfa",
+              color: "#2DD4BF",
               letterSpacing: "-0.02em",
             }}
           >
-            AetherPeptide
+            Aether
+          </span>
+          <span
+            style={{
+              fontSize: 56,
+              fontWeight: 700,
+              color: "#FFFFFF",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Peptide
           </span>
         </div>
+
+        {/* Tagline */}
         <div
           style={{
-            fontSize: 28,
-            color: "#99f6e4",
-            textAlign: "center",
-            maxWidth: 700,
-            lineHeight: 1.4,
+            fontSize: 22,
+            color: "#6BD8CB",
+            letterSpacing: "0.1em",
+            textTransform: "uppercase" as const,
           }}
         >
-          Physician-Supervised Peptide Therapy
+          Peptide Therapy. Refined.
         </div>
+
+        {/* Bottom line */}
         <div
           style={{
-            fontSize: 18,
-            color: "#5eead4",
-            marginTop: 20,
-            opacity: 0.8,
+            fontSize: 14,
+            color: "#6D7A77",
+            marginTop: 32,
           }}
         >
-          Physician-Supervised · 503A Pharmacy · Science-Backed
+          Physician-Supervised · 503A Pharmacy · Premium Experience
         </div>
       </div>
     ),
