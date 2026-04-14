@@ -69,11 +69,6 @@ const PLANS: Plan[] = [
 function PricingCard({ plan }: { plan: Plan }) {
   return (
     <div className="relative flex flex-col rounded-[2rem] bg-white p-8 shadow-sm shadow-black/[0.03] dark:bg-white/[0.06]">
-      {/* Teal accent bar — only if plan has a badge */}
-      {plan.badge !== null && (
-        <div className="absolute left-8 right-8 top-0 h-[3px] rounded-full bg-primary" />
-      )}
-
       {/* Badge */}
       {plan.badge !== null && (
         <div className="mb-2 mt-1">
