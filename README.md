@@ -135,7 +135,7 @@ npm run lint      # Run ESLint
 - **Design**: Restorative Lab (DESIGN.md), adapted to a content-oriented, approachable layout
 - **Retired this phase** (recoverable from git history): `/peptides`, `/peptides/[slug]`, `/quiz`, `/pricing`, `/start` and their telehealth/product components
 - **Next milestone**: FDA Pharmacy Compounding Advisory Committee meeting, **July 23–24, 2026** → reassess reintroducing compliant commerce flows
-- **Signup backend**: `POST /api/subscribe` currently validates + returns OK as a stub — **wire to an email service provider (Beehiiv/ConvertKit/etc.) before running paid acquisition**
+- **Signup backend**: `POST /api/subscribe` creates a subscription in **Beehiiv**. Requires env vars `BEEHIIV_API_KEY` + `BEEHIIV_PUBLICATION_ID` (see `.env.example`) — set them in Vercel **and** `.env.local`. Without them the endpoint returns 503 (fails loudly rather than dropping the email).
 
 ## Repository
 

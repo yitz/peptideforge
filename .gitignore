@@ -42,3 +42,6 @@ next-env.d.ts
 
 # Local Claude Code settings
 .claude/
+
+# Keep the example template tracked
+!.env.example
