@@ -1,8 +1,19 @@
 # AetherPeptide
 
-Premium physician-supervised peptide therapy platform. A branded telehealth storefront — NOT a peptide manufacturer, NOT a clinical AI tool.
+A no-hype **news + newsletter site** tracking peptide research and regulatory developments — with a **priority waitlist** for compliant options after regulatory clarity.
 
-## What This Is
+> ## ⚡ Current Phase (June 2026 onward) — Audience-Building / Regulatory News
+>
+> **The site is in a deliberate, temporary strategic phase.** It is **not** a telehealth or e-commerce site right now. The #1 job is **email capture** — newsletter signups + waitlist. Everything else supports that.
+>
+> - **What it is now:** Regulatory updates, recategorization timelines, research summaries, and industry movement, delivered as a newsletter + a priority waitlist.
+> - **Why:** Build an owned audience now while we await regulatory clarity (the FDA Pharmacy Compounding Advisory Committee meeting on **July 23–24, 2026**, covering peptides including BPC-157 and TB-500). News + waitlist positioning carries far less paid-ad and regulatory risk than benefit/protocol content, and protects a clean compliant launch later.
+> - **Hard rules this phase:** No disease/treatment claims. No protocols or dosing. No benefit promises. No telehealth/provider-handoff flows. No product sales/pricing/checkout. No quiz-to-protocol. News framing only ("emerging research," "timeline updates," "what the data and regulatory process show"). Every substantive page carries the news/not-medical-advice disclaimer.
+> - **Tone:** Informal but credible and straightforward — a trustworthy industry observer, not a salesperson.
+>
+> See **AGENTS.md → "Current Phase"** for the authoritative spec. Everything below describes the **long-term** telehealth vision, which is paused until after regulatory clarity.
+
+## What This Is (long-term vision — paused)
 
 AetherPeptide is a **branded storefront and marketing machine** that connects customers with licensed physicians through our partner provider network. We own the customer experience: discovery, education, quiz, checkout, order tracking. All medical decisions — intake, evaluation, prescribing, protocol design, lab interpretation — are handled exclusively by licensed providers.
 
@@ -10,7 +21,7 @@ AetherPeptide is a **branded storefront and marketing machine** that connects cu
 
 - Not a clinical AI tool (no AI screening, no AI protocol recommendations, no AI lab interpretation)
 - Not a peptide manufacturer or pharmacy (we connect to licensed 503A pharmacies via provider partners)
-- Not a source of medical advice (structure-function educational claims only)
+- Not a source of medical advice — and **in the current phase, not a source of structure-function benefit claims either** (news/information framing only)
 
 ## Brand Rules
 
@@ -71,23 +82,23 @@ See **DESIGN.md** for the complete specification. Key principles:
 ```
 src/
 ├── app/
-│   ├── (marketing)/          # Marketing site routes (landing, peptides, quiz, pricing, start)
-│   ├── api/creative/         # Marketing Creative Agent API
+│   ├── (marketing)/          # Site routes: / (home), /newsletter, /updates
+│   ├── api/subscribe/        # Newsletter + waitlist signup endpoint (stub — wire to ESP)
+│   ├── api/creative/         # Marketing Creative Agent API (non-clinical, allowed)
 │   ├── layout.tsx            # Root layout with Analytics + SpeedInsights + Material Symbols
 │   ├── globals.css           # Tailwind + Restorative Lab design system utilities
-│   ├── sitemap.ts            # Dynamic sitemap
+│   ├── sitemap.ts            # Dynamic sitemap (home, newsletter, updates)
 │   ├── robots.ts             # Robots directives
 │   └── opengraph-image.tsx   # Dynamic OG image
 ├── components/
-│   ├── layout/               # Header (glass-nav), footer, theme toggle/provider
-│   ├── marketing/            # Hero, trust, goals (bento), CTA sections
-│   ├── quiz/                 # Goal matcher quiz + results
-│   └── ui/                   # shadcn/ui components
+│   ├── layout/               # Header (glass-nav), footer, theme toggle/provider, logo
+│   ├── marketing/            # Hero, value props, timeline, signup CTA, disclaimer
+│   └── ui/                   # shadcn/ui (Base UI) components
 └── lib/
-    ├── ai/                   # Creative agent + compliance filter
-    ├── analytics.ts          # GA4 + Meta Pixel unified tracking
+    ├── ai/                   # Creative agent + compliance filter (non-clinical)
+    ├── analytics.ts          # GA4 + Meta Pixel unified tracking (incl. signup events)
     ├── fonts.ts              # Inter + Space Grotesk + Noto Serif + Geist Mono
-    └── peptides/             # Dynamic peptide registry
+    └── peptides/             # Peptide registry (retained for future content reference)
 ```
 
 ## Design System Utilities (globals.css)
@@ -117,11 +128,14 @@ npm run lint      # Run ESLint
 
 ## Current Status
 
-- **Live URL**: https://peptideforge-paay.vercel.app (pending domain: aetherpeptide.com)
-- **Routes**: 18 (11 static, 6 SSG peptide pages, 1 dynamic API)
-- **Design**: Restorative Lab (DESIGN.md) — fully integrated and deployed
-- **Phases complete**: Phase 1 (marketing site + quiz + creative agent + Restorative Lab design)
-- **Next**: Stripe checkout, provider partner integration, patient dashboard (order tracking)
+- **Live URL**: https://aetherpeptide.com (also https://peptideforge-paay.vercel.app)
+- **Phase**: Audience-building / regulatory news (see top of this file + AGENTS.md)
+- **Active routes**: `/` (homepage + signup), `/newsletter` (about + waitlist), `/updates` (news archive)
+- **Primary KPI**: newsletter + waitlist signups
+- **Design**: Restorative Lab (DESIGN.md), adapted to a content-oriented, approachable layout
+- **Retired this phase** (recoverable from git history): `/peptides`, `/peptides/[slug]`, `/quiz`, `/pricing`, `/start` and their telehealth/product components
+- **Next milestone**: FDA Pharmacy Compounding Advisory Committee meeting, **July 23–24, 2026** → reassess reintroducing compliant commerce flows
+- **Signup backend**: `POST /api/subscribe` currently validates + returns OK as a stub — **wire to an email service provider (Beehiiv/ConvertKit/etc.) before running paid acquisition**
 
 ## Repository
 

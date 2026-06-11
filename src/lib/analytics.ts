@@ -128,9 +128,20 @@ export const track = {
     ga4Event("nav_click", { location, label, destination });
   },
 
-  /* ---- Provider Handoff ---- */
+  /* ---- Newsletter + Waitlist (primary conversion this phase) ---- */
 
-  /** User clicks "Start Your Journey" / "Get Started" to enter provider flow */
+  /** User submits the email signup form (fired on submit, before success) */
+  signupSubmit(source: string) {
+    ga4Event("signup_submit", { source });
+  },
+
+  /** Signup confirmed by the API — this is the primary conversion event */
+  signupSuccess(source: string) {
+    ga4Event("signup_success", { source });
+    metaStandard("Lead", { content_name: "Newsletter + Waitlist", content_category: source });
+  },
+
+  /** Provider Handoff — retained for the future compliant-launch phase (unused now) */
   startJourney(source: string) {
     ga4Event("start_journey", { source });
     metaStandard("InitiateCheckout", { content_category: source });

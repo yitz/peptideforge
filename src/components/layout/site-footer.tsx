@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Logo } from "@/components/layout/logo";
+import { Disclaimer } from "@/components/marketing/disclaimer";
 
 export function SiteFooter() {
   return (
-    <footer className="w-full border-t border-border/40 bg-card py-20 px-8 dark:border-border/20">
+    <footer className="w-full bg-card py-20 px-8">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12">
         {/* Brand */}
         <div className="space-y-6">
@@ -11,8 +12,9 @@ export function SiteFooter() {
             <Logo variant="horizontal" />
           </Link>
           <p className="max-w-xs text-xs leading-relaxed text-muted-foreground">
-            A premium telehealth platform connecting you with licensed physicians
-            for physician-supervised peptide therapy.
+            An independent, no-hype briefing on peptide research and regulatory
+            developments — plus a priority waitlist for compliant options after
+            regulatory clarity.
           </p>
         </div>
 
@@ -23,10 +25,8 @@ export function SiteFooter() {
               Explore
             </span>
             <nav className="flex flex-col gap-3">
-              <Link className="text-xs text-muted-foreground transition-colors hover:text-primary" href="/peptides">Peptides</Link>
-              <Link className="text-xs text-muted-foreground transition-colors hover:text-primary" href="/#how-it-works">How It Works</Link>
-              <Link className="text-xs text-muted-foreground transition-colors hover:text-primary" href="/quiz">Take the Quiz</Link>
-              <Link className="text-xs text-muted-foreground transition-colors hover:text-primary" href="/pricing">Pricing</Link>
+              <Link className="text-xs text-muted-foreground transition-colors hover:text-primary" href="/newsletter">Newsletter</Link>
+              <Link className="text-xs text-muted-foreground transition-colors hover:text-primary" href="/updates">Updates</Link>
             </nav>
           </div>
           <div className="flex flex-col gap-5">
@@ -36,23 +36,13 @@ export function SiteFooter() {
             <nav className="flex flex-col gap-3">
               <Link className="text-xs text-muted-foreground transition-colors hover:text-primary" href="/privacy">Privacy Policy</Link>
               <Link className="text-xs text-muted-foreground transition-colors hover:text-primary" href="/terms">Terms of Service</Link>
-              <Link className="text-xs text-muted-foreground transition-colors hover:text-primary" href="/contact">Contact Support</Link>
             </nav>
           </div>
         </div>
 
         {/* Disclaimer */}
-        <div className="border-t border-border/40 pt-12 dark:border-border/20">
-          <p className="text-[9px] font-body uppercase leading-loose tracking-[0.1em] text-muted-foreground/60">
-            &copy; {new Date().getFullYear()} AetherPeptide. All rights reserved.
-            AetherPeptide connects you with licensed physicians through our partner
-            network. All medical decisions, prescriptions, and
-            protocols are handled exclusively by licensed providers. Compounded
-            peptides available only under valid prescription via 503A pharmacies.
-            These statements have not been evaluated by the Food and Drug
-            Administration. Not intended to diagnose, treat, cure, or prevent any
-            disease.
-          </p>
+        <div className="pt-12">
+          <Disclaimer variant="footer" />
         </div>
       </div>
     </footer>

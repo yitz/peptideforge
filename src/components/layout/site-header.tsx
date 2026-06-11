@@ -9,9 +9,8 @@ import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { Logo } from "@/components/layout/logo";
 
 const NAV_ITEMS = [
-  { label: "How It Works", href: "/#how-it-works" },
-  { label: "Peptides", href: "/peptides" },
-  { label: "Pricing", href: "/pricing" },
+  { label: "Newsletter", href: "/newsletter" },
+  { label: "Updates", href: "/updates" },
 ] as const;
 
 export function SiteHeader() {
@@ -41,10 +40,11 @@ export function SiteHeader() {
           <ThemeToggle />
           <Button
             size="sm"
+            nativeButton={false}
             className="glass-primary rounded-full border-0 px-6 py-2 font-label text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-xl shadow-primary/10"
-            render={<Link href="/quiz" />}
+            render={<Link href="/newsletter" />}
           >
-            Start Quiz
+            Join the list
           </Button>
         </div>
 
@@ -74,8 +74,8 @@ export function SiteHeader() {
                   ))}
                 </nav>
                 <div className="flex flex-col gap-2 border-t border-border pt-4">
-                  <Button render={<Link href="/quiz" onClick={() => setOpen(false)} />}>
-                    Start Quiz
+                  <Button nativeButton={false} render={<Link href="/newsletter" onClick={() => setOpen(false)} />}>
+                    Join the list
                   </Button>
                 </div>
               </div>

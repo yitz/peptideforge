@@ -8,7 +8,48 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 **Every agent working on this project MUST read this file and README.md before doing anything else.** Start your first response with: "Understood — working from latest AGENTS.md and README.md"
 
-## Core Identity
+## Current Phase (June 2026 onward) — Audience-Building / Regulatory News
+
+> **This section overrides anything below it for now.** The telehealth storefront described in "Core Identity" is the *long-term* vision, not what we are building today.
+
+**What we are right now:** A smart, informal, no-hype **news and information site** covering peptide research and regulatory developments — paired with a **newsletter + priority waitlist**.
+
+**The #1 job of this site:** Email capture. Every page exists to grow the newsletter list and waitlist. Everything else supports that single conversion goal.
+
+**Why this phase exists (rationale):**
+- We want to start building an **owned audience now** — through the newsletter and waitlist — while we wait for regulatory clarity. The key decision point is the **FDA Pharmacy Compounding Advisory Committee (PCAC) meeting on July 23–24, 2026**, which covers several peptides including BPC-157 and TB-500.
+- Running Google and Instagram ads to build seniority and grow the list carries **real platform + regulatory risk** if content includes direct benefit claims, protocols, or sales language too early.
+- News/regulatory content + waitlist positioning creates **far less platform and regulatory friction** than benefit- or protocol-focused content. This protects the long-term path to a clean, compliant telehealth launch later.
+- This is a **deliberate, temporary strategic phase** (Option A: news + regulatory tracking + waitlist).
+
+**Tone:** Informal but credible and straightforward. Conversational without being hypey or bro-science. A trustworthy industry observer, not a salesperson.
+
+**Core positioning (use consistently):**
+- Regulatory updates, recategorization timelines, research summaries, industry movement.
+- A waitlist for **"priority access when compliant options open after regulatory clarity."**
+- This is **news and information, not medical advice.**
+
+**Explicitly NOT allowed in this phase:**
+- ❌ No disease, treatment, or cure claims.
+- ❌ No protocols or dosing information of any kind.
+- ❌ No direct benefit promises ("boosts recovery," "improves sleep," etc.).
+- ❌ No telehealth flows, provider-handoff flows, intake, or "start your journey" funnels.
+- ❌ No product sales, pricing, checkout, "add to cart," or e-commerce of any kind.
+- ❌ No quiz-to-protocol matching (the old goals quiz is retired for this phase).
+
+**Required framing instead:** Use news language — "emerging research," "timeline updates," "what the data and the regulatory process show," "industry movement." Report on developments; never recommend or promise.
+
+**Disclaimer requirement (this phase):** Every substantive page MUST carry a clear disclaimer that this is news/information only, not medical advice; that AetherPeptide is not a pharmacy, manufacturer, or provider; that joining the waitlist is not a purchase and creates no provider relationship; and that "priority access" refers only to future, compliant options should they become available after regulatory clarity. Use the shared `<Disclaimer />` component (`src/components/marketing/disclaimer.tsx`).
+
+**Pages in this phase:**
+- `/` — Homepage: hero focused on newsletter/waitlist value + prominent email signup.
+- `/newsletter` — Newsletter/About: what you get, cadence, the waitlist, who it's for.
+- `/updates` — Simple updates/archive of regulatory + research news (news-framed).
+- Old telehealth routes (`/peptides`, `/quiz`, `/pricing`, `/start`) are **removed** this phase. Recoverable from git history when the compliant launch phase begins.
+
+**When the phase ends:** After regulatory clarity (post-PCAC), we revisit reintroducing physician-supervised commerce flows. Until then, keep the site strictly news + capture.
+
+## Core Identity (long-term vision — see Current Phase above for what to build now)
 
 AetherPeptide is a **premium branded telehealth storefront**. We are NOT a peptide manufacturer, NOT a pharmacy, and NOT a clinical AI tool. We own the customer experience (discovery, education, quiz, checkout, tracking). All medical work is done by licensed physicians through our partner provider network.
 

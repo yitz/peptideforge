@@ -9,19 +9,19 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "AetherPeptide — Premium Physician-Supervised Peptide Therapy",
+    default: "AetherPeptide — Peptide Regulatory News + Newsletter",
     template: "%s | AetherPeptide",
   },
   description:
-    "Premium physician-supervised peptide therapy. Personalized protocols for recovery, performance, and longevity — compounded at licensed 503A pharmacies.",
+    "A no-hype briefing on peptide research, recategorization timelines, and regulatory developments — including the FDA compounding advisory committee review. Subscribe and join the priority waitlist. News and information, not medical advice.",
   keywords: [
-    "peptide therapy",
-    "BPC-157",
-    "telehealth",
-    "longevity",
-    "regenerative medicine",
-    "personalized medicine",
-    "biohacking",
+    "peptide news",
+    "peptide regulation",
+    "FDA compounding advisory committee",
+    "503A compounding",
+    "BPC-157 regulation",
+    "TB-500",
+    "peptide newsletter",
   ],
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://aetherpeptide.com"
